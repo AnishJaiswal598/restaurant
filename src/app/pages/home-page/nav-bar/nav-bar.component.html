@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="logo-container">
+    <div class="logo"></div>
+  </div>
+  <div class="pages">
+    <div
+      class="item"
+      [ngClass]="currentTab == 'home' ? 'highlight' : ''"
+      (click)="changeCurrentTab('home')"
+    >
+      HOME
+    </div>
+    <div
+      class="item"
+      [ngClass]="currentTab == 'about' ? 'highlight' : ''"
+      (click)="changeCurrentTab('about')"
+    >
+      ABOUT US
+    </div>
+    <div
+      class="item"
+      [ngClass]="currentTab == 'menu' ? 'highlight' : ''"
+      (click)="changeCurrentTab('menu')"
+    >
+      MENU
+    </div>
+    <div
+      class="item"
+      [ngClass]="currentTab == 'team' ? 'highlight' : ''"
+      (click)="changeCurrentTab('team')"
+    >
+      TEAM
+    </div>
+    <div
+      class="item"
+      [ngClass]="currentTab == 'contact' ? 'highlight' : ''"
+      (click)="changeCurrentTab('contact')"
+    >
+      CONTACT
+    </div>
+    <div class="item">CART</div>
+  </div>
+</div>
