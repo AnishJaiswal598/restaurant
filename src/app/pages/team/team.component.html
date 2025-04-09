@@ -1,1 +1,15 @@
-<p>team works!</p>
+<div class="outer-container">
+  <div class="head">
+    <div class="header">Our Chefs</div>
+    <div class="underline"></div>
+  </div>
+  <div class="members">
+    @for (chef of chefs; track $index) {
+    <div class="individual">
+      <img [src]="chef.image" [alt]="chef.name" class="image" />
+      <div class="name">{{ chef.name }}</div>
+      <div class="description">{{ chef.description }}</div>
+    </div>
+    }
+  </div>
+</div>

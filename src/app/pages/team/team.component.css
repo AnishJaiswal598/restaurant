@@ -1,0 +1,53 @@
+.members {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.underline {
+  background: url("../../../assets/underline.png");
+  height: 40px;
+  width: 200px;
+  background-repeat: no-repeat;
+}
+
+.outer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+  justify-content: space-around;
+}
+
+.header {
+  color: #ca3d26;
+  display: inline-block;
+  font-family: "Dancing Script", cursive;
+  font-size: 60px;
+  letter-spacing: 2px;
+  line-height: 0.8;
+  margin: 0;
+  padding: 0 20px 0px;
+  position: relative;
+  text-transform: capitalize;
+}
+
+.individual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+}
+
+.description {
+  text-align: center;
+  width: 200px;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 120px;
+}
