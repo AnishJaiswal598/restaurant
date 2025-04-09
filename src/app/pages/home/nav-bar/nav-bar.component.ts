@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
@@ -10,6 +10,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   styleUrl: './nav-bar.component.css',
 })
 export class NavBarComponent implements OnInit {
+  @Output() tabValue = new EventEmitter<string>();
   currentTab: string = '';
   ngOnInit(): void {
     this.currentTab = 'home';
@@ -17,5 +18,6 @@ export class NavBarComponent implements OnInit {
 
   changeCurrentTab = (tab: string) => {
     this.currentTab = tab;
+    this.tabValue.emit(this.currentTab);
   };
 }
