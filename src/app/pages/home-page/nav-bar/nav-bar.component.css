@@ -27,12 +27,17 @@
   padding-left: 200px;
 }
 
+.item {
+  cursor: pointer;
+  height: 100%;
+  color: white;
+}
+
 .highlight {
   color: #ca3d26;
   border-top: 2px solid #ca3d26;
 }
 
-.item {
-  cursor: pointer;
-  height: 100%;
+a {
+  text-decoration: none;
 }

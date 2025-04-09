@@ -18,3 +18,9 @@
   background-repeat: repeat;
   z-index: -1;
 }
+
+.reduce-header {
+  height: 15%;
+  background-color: white;
+  color: black;
+}

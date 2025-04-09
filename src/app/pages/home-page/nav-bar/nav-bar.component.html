@@ -3,41 +3,51 @@
     <div class="logo"></div>
   </div>
   <div class="pages">
-    <div
+    <a
+      routerLink="/home"
+      routerLinkActive="active"
       class="item"
       [ngClass]="currentTab == 'home' ? 'highlight' : ''"
       (click)="changeCurrentTab('home')"
     >
       HOME
-    </div>
-    <div
+    </a>
+    <a
+      routerLink="/about-us"
+      routerLinkActive="active"
       class="item"
       [ngClass]="currentTab == 'about' ? 'highlight' : ''"
       (click)="changeCurrentTab('about')"
     >
       ABOUT US
-    </div>
-    <div
+    </a>
+    <a
+      routerLink="/menu"
+      routerLinkActive="active"
       class="item"
       [ngClass]="currentTab == 'menu' ? 'highlight' : ''"
       (click)="changeCurrentTab('menu')"
     >
       MENU
-    </div>
-    <div
+    </a>
+    <a
+      routerLink="/team"
+      routerLinkActive="active"
       class="item"
       [ngClass]="currentTab == 'team' ? 'highlight' : ''"
       (click)="changeCurrentTab('team')"
     >
       TEAM
-    </div>
-    <div
+    </a>
+    <a
+      routerLink="/contact"
+      routerLinkActive="active"
       class="item"
       [ngClass]="currentTab == 'contact' ? 'highlight' : ''"
       (click)="changeCurrentTab('contact')"
     >
       CONTACT
-    </div>
-    <div class="item">CART</div>
+    </a>
+    <a class="item">CART</a>
   </div>
 </div>
