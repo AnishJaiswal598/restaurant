@@ -1,0 +1,47 @@
+.outer-container {
+  background: url("../../../assets/about_bg.png");
+  height: 83vh;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  width: 100vw;
+}
+
+.content {
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sign {
+  background: url("../../../assets/about_sign.png");
+  height: 100px;
+  width: 200px;
+  background-repeat: no-repeat;
+}
+
+.body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  width: 37vw;
+  padding-right: 20px;
+}
+
+.right {
+  padding-left: 20px;
+  width: 37vw;
+}
+
+.head {
+  color: #ca3d26;
+  font-family: "Dancing Script", cursive;
+  font-size: 60px;
+  letter-spacing: 2px;
+  line-height: 0.8;
+  margin: 0;
+  padding: 30px 20px 45px;
+}
