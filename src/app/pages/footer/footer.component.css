@@ -1,0 +1,63 @@
+.outer-container {
+  height: 65vh;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7em;
+  justify-content: space-around;
+}
+
+.logo {
+  background: url("../../../assets/logo3-modified.png");
+  height: 100px;
+  width: 120px;
+  background-size: contain;
+}
+
+.social-media {
+  display: flex;
+  width: 250px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.material-icons {
+  color: white;
+}
+
+.policies {
+  display: flex;
+  width: 35%;
+  justify-content: space-around;
+  color: #ca3d26;
+}
+
+.final-line {
+  display: flex;
+  padding-top: 10px;
+  border-top: 1px dotted white;
+  width: 80vw;
+  justify-content: space-between;
+}
+
+.contact-lines {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.email,
+.number {
+  padding-top: 15px;
+  color: #ca3d26;
+}
+
+.app-name {
+  color: #ca3d26;
+}
