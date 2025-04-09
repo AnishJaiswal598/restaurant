@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="logo-container">
+    <div class="logo"></div>
+  </div>
+  <div class="pages">
+    <a
+      routerLink="/home"
+      routerLinkActive="active"
+      class="item"
+      [ngClass]="currentTab == 'home' ? 'highlight' : ''"
+      (click)="changeCurrentTab('home')"
+    >
+      HOME
+    </a>
+    <a
+      routerLink="/about-us"
+      routerLinkActive="active"
+      class="item"
+      [ngClass]="currentTab == 'about' ? 'highlight' : ''"
+      (click)="changeCurrentTab('about')"
+    >
+      ABOUT US
+    </a>
+    <a
+      routerLink="/menu"
+      routerLinkActive="active"
+      class="item"
+      [ngClass]="currentTab == 'menu' ? 'highlight' : ''"
+      (click)="changeCurrentTab('menu')"
+    >
+      MENU
+    </a>
+    <a
+      routerLink="/team"
+      routerLinkActive="active"
+      class="item"
+      [ngClass]="currentTab == 'team' ? 'highlight' : ''"
+      (click)="changeCurrentTab('team')"
+    >
+      TEAM
+    </a>
+    <a
+      routerLink="/contact"
+      routerLinkActive="active"
+      class="item"
+      [ngClass]="currentTab == 'contact' ? 'highlight' : ''"
+      (click)="changeCurrentTab('contact')"
+    >
+      CONTACT
+    </a>
+    <a class="item">CART</a>
+  </div>
+</div>
