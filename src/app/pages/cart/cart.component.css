@@ -1,0 +1,27 @@
+.header {
+  color: #ca3d26;
+  display: inline-block;
+  font-family: "Dancing Script", cursive;
+  font-size: 60px;
+  letter-spacing: 2px;
+  line-height: 0.8;
+  margin: 0;
+  padding: 0 20px 0px;
+  position: relative;
+  text-transform: capitalize;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 120px;
+}
+
+.outer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 78vh;
+}
