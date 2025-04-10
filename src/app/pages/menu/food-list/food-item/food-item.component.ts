@@ -15,6 +15,7 @@ export class FoodItemComponent {
     image: '',
     ingredients: [''],
     price: 0,
+    type: '',
   };
   quantity: number = 0;
 

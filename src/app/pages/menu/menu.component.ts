@@ -22,6 +22,7 @@ export class MenuComponent implements OnInit {
           'https://recipes.timesofindia.com/thumb/83740315.cms?width=1200&height=900',
         ingredients: ['Bread', 'Butter', 'Tomato', 'Cucumber'],
         price: 100,
+        type: 'lunch',
       },
       {
         name: 'Sandwich',
@@ -29,6 +30,7 @@ export class MenuComponent implements OnInit {
           'https://recipes.timesofindia.com/thumb/83740315.cms?width=1200&height=900',
         ingredients: ['Bread', 'Butter', 'Tomato', 'Cucumber'],
         price: 100,
+        type: 'breakfast',
       },
       {
         name: 'Sandwich',
@@ -36,6 +38,31 @@ export class MenuComponent implements OnInit {
           'https://recipes.timesofindia.com/thumb/83740315.cms?width=1200&height=900',
         ingredients: ['Bread', 'Butter', 'Tomato', 'Cucumber'],
         price: 100,
+        type: 'dinner',
+      },
+      {
+        name: 'Sandwich',
+        image:
+          'https://recipes.timesofindia.com/thumb/83740315.cms?width=1200&height=900',
+        ingredients: ['Bread', 'Butter', 'Tomato', 'Cucumber'],
+        price: 100,
+        type: 'dinner',
+      },
+      {
+        name: 'Sandwich',
+        image:
+          'https://recipes.timesofindia.com/thumb/83740315.cms?width=1200&height=900',
+        ingredients: ['Bread', 'Butter', 'Tomato', 'Cucumber'],
+        price: 100,
+        type: 'coffee',
+      },
+      {
+        name: 'Sandwich',
+        image:
+          'https://recipes.timesofindia.com/thumb/83740315.cms?width=1200&height=900',
+        ingredients: ['Bread', 'Butter', 'Tomato', 'Cucumber'],
+        price: 100,
+        type: 'snacks',
       },
     ];
 
@@ -45,5 +72,10 @@ export class MenuComponent implements OnInit {
 
   changeType = (type: string) => {
     this.selectType = type;
+    if (type === 'all') {
+      this.typeFoodList = [...this.list];
+    } else {
+      this.typeFoodList = this.list.filter((item) => item.type === type);
+    }
   };
 }

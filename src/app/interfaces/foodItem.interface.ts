@@ -3,4 +3,5 @@ export interface foodItem {
   image: string;
   ingredients: string[];
   price: number;
+  type: string;
 }
