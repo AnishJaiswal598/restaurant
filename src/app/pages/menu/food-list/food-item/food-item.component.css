@@ -49,7 +49,8 @@
 
 .but {
   padding: 10px;
-  color: red;
+  width: 95px;
+  color: #ca3d26;
   border: 2px solid #ca3d26;
   border-radius: 10px;
   font-weight: 500;
@@ -60,4 +61,29 @@
   color: white;
   background-color: #ca3d26;
   border: none;
+}
+
+.ingredients {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.small-but {
+  border: none;
+  background-color: #ca3d26;
+  color: white;
+  cursor: pointer;
+  size: 20px;
+}
+
+.small-but-container {
+  background-color: #ca3d26;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  border: 1px solid #ca3d26;
+  border-radius: 10px;
+  height: 34px;
+  font-weight: 500;
 }
