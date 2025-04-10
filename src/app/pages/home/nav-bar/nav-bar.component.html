@@ -13,15 +13,6 @@
       HOME
     </a>
     <a
-      routerLink="/about-us"
-      routerLinkActive="active"
-      class="item"
-      [ngClass]="currentTab == 'about' ? 'highlight' : ''"
-      (click)="changeCurrentTab('about')"
-    >
-      ABOUT US
-    </a>
-    <a
       routerLink="/menu"
       routerLinkActive="active"
       class="item"
@@ -29,6 +20,15 @@
       (click)="changeCurrentTab('menu')"
     >
       MENU
+    </a>
+    <a
+      routerLink="/about-us"
+      routerLinkActive="active"
+      class="item"
+      [ngClass]="currentTab == 'about' ? 'highlight' : ''"
+      (click)="changeCurrentTab('about')"
+    >
+      ABOUT US
     </a>
     <a
       routerLink="/team"
