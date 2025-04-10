@@ -54,6 +54,7 @@
   padding: 3px 10px;
   text-transform: uppercase;
   font-family: "Lato", sans-serif;
+  border-radius: 7px;
 }
 
 .item:hover {
@@ -64,4 +65,9 @@
 
 .food-container {
   padding-top: 40px;
+}
+
+.highlight {
+  color: white;
+  background-color: #ca3d26;
 }

@@ -4,12 +4,48 @@
     <div class="underline"></div>
   </div>
   <div class="food-type">
-    <button class="item">All</button>
-    <button class="item">Breakfast</button>
-    <button class="item">Lunch</button>
-    <button class="item">Dinner</button>
-    <button class="item">Coffee</button>
-    <button class="item">Snacks</button>
+    <button
+      (click)="changeType('all')"
+      [ngClass]="selectType == 'all' ? 'highlight' : ''"
+      class="item"
+    >
+      All
+    </button>
+    <button
+      (click)="changeType('lunch')"
+      [ngClass]="selectType == 'lunch' ? 'highlight' : ''"
+      class="item"
+    >
+      Lunch
+    </button>
+    <button
+      (click)="changeType('breakfast')"
+      [ngClass]="selectType == 'breakfast' ? 'highlight' : ''"
+      class="item"
+    >
+      Breakfast
+    </button>
+    <button
+      (click)="changeType('dinner')"
+      [ngClass]="selectType == 'dinner' ? 'highlight' : ''"
+      class="item"
+    >
+      Dinner
+    </button>
+    <button
+      (click)="changeType('coffee')"
+      [ngClass]="selectType == 'coffee' ? 'highlight' : ''"
+      class="item"
+    >
+      Coffee
+    </button>
+    <button
+      (click)="changeType('snacks')"
+      [ngClass]="selectType == 'snacks' ? 'highlight' : ''"
+      class="item"
+    >
+      Snacks
+    </button>
   </div>
   <div class="food-container">
     <app-food-list></app-food-list>
