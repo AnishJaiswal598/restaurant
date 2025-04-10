@@ -1,7 +1,5 @@
-<div class="image-container" [ngClass]="!imageBG ? 'reduce-header' : ''">
-  <app-contact></app-contact>
-  <app-nav-bar (tabValue)="setImageBG($event)"></app-nav-bar>
-</div>
+<app-contact></app-contact>
+<app-nav-bar></app-nav-bar>
 <router-outlet></router-outlet>
 <div class="footer">
   <app-footer></app-footer>

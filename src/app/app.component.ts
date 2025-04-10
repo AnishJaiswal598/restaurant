@@ -19,14 +19,5 @@ import { FooterComponent } from './pages/footer/footer.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  imageBG: boolean = true;
   title = 'chinese-resturant';
-
-  setImageBG = (tab: string) => {
-    if (tab != 'home') {
-      this.imageBG = false;
-    } else {
-      this.imageBG = true;
-    }
-  };
 }
