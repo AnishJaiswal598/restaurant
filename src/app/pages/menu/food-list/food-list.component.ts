@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FoodItemComponent } from './food-item/food-item.component';
+import { foodItem } from '../../../interfaces/foodItem.interface';
 
 @Component({
   selector: 'app-food-list',
@@ -9,27 +10,5 @@ import { FoodItemComponent } from './food-item/food-item.component';
   styleUrl: './food-list.component.css',
 })
 export class FoodListComponent {
-  foodList = [
-    {
-      name: 'Sandwich',
-      image:
-        'https://recipes.timesofindia.com/thumb/83740315.cms?width=1200&height=900',
-      ingredients: ['Bread', 'Butter', 'Tomato', 'Cucumber'],
-      price: 100,
-    },
-    {
-      name: 'Sandwich',
-      image:
-        'https://recipes.timesofindia.com/thumb/83740315.cms?width=1200&height=900',
-      ingredients: ['Bread', 'Butter', 'Tomato', 'Cucumber'],
-      price: 100,
-    },
-    {
-      name: 'Sandwich',
-      image:
-        'https://recipes.timesofindia.com/thumb/83740315.cms?width=1200&height=900',
-      ingredients: ['Bread', 'Butter', 'Tomato', 'Cucumber'],
-      price: 100,
-    },
-  ];
+  @Input() foodList: foodItem[] = [];
 }

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { foodItem } from '../../../../interfaces/foodItem.interface';
 
 @Component({
   selector: 'app-food-item',
@@ -9,7 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './food-item.component.css',
 })
 export class FoodItemComponent {
-  @Input() foodItem = {
+  @Input() foodItem: foodItem = {
     name: '',
     image: '',
     ingredients: [''],
