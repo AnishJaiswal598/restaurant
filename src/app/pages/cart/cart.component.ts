@@ -10,13 +10,8 @@ import { CartSummaryComponent } from './cart-summary/cart-summary.component';
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css',
 })
-export class CartComponent implements OnInit {
+export class CartComponent {
   constructor(private cartItem: CartItemService) {}
-  ngOnInit(): void {
-    this.cartItem.get().subscribe((item: any) => {
-      console.log(item);
-    });
-  }
 
   clearCart = () => {
     this.cartItem.clear();
