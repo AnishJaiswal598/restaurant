@@ -24,10 +24,10 @@ export class FoodItemComponent {
 
   changeQuantity = (type: string, item: cartItem) => {
     if (type == 'add') {
-      this.cartItem.set({ ...this.foodItem, quantity: 1 });
+      this.cartItem.set({ ...this.foodItem }, 1);
       this.foodItem.quantity += 1;
     } else {
-      this.cartItem.set({ ...this.foodItem, quantity: -1 });
+      this.cartItem.set({ ...this.foodItem }, -1);
       this.foodItem.quantity -= 1;
     }
   };

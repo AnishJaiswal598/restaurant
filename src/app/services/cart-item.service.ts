@@ -12,11 +12,11 @@ export class CartItemService {
   );
   constructor() {}
 
-  set = (item: cartItem): void => {
+  set = (item: cartItem, quantity: number): void => {
     let currentCart = this.cartItems.value;
     const existingMeal = currentCart.find((m) => m.id == item.id);
     if (existingMeal) {
-      existingMeal.quantity += item.quantity;
+      existingMeal.quantity += quantity;
     } else {
       currentCart.push(item);
     }

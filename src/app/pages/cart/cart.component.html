@@ -1,9 +1,13 @@
 <div class="outer-container">
   <div class="header">My Cart</div>
   <div class="section">
-    <div class="left">hello</div>
+    <div class="left">
+      <app-cart-list></app-cart-list>
+    </div>
     <div class="right">
-      <div class="summary"></div>
+      <div class="summary">
+        <app-cart-summary></app-cart-summary>
+      </div>
       <div class="order">
         <button (click)="clearCart()" class="order-but">Place Order</button>
       </div>
