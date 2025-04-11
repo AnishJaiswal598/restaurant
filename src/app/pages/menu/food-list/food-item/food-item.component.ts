@@ -11,7 +11,14 @@ import { cartItem } from '../../../../interfaces/cartItem.interface';
   styleUrl: './food-item.component.css',
 })
 export class FoodItemComponent {
-  constructor(private cartItem: CartItemService) {}
+  constructor(private cartItem: CartItemService) {
+    this.cartItem.get().subscribe((item: cartItem[]) => {
+      const currItem = item.find((i) => i.id == this.foodItem.id);
+      if (currItem) {
+        this.foodItem = currItem;
+      }
+    });
+  }
   @Input() foodItem: cartItem = {
     id: '',
     name: '',
@@ -25,10 +32,8 @@ export class FoodItemComponent {
   changeQuantity = (type: string, item: cartItem) => {
     if (type == 'add') {
       this.cartItem.set({ ...this.foodItem }, 1);
-      this.foodItem.quantity += 1;
     } else {
       this.cartItem.set({ ...this.foodItem }, -1);
-      this.foodItem.quantity -= 1;
     }
   };
 }
