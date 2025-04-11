@@ -18,9 +18,6 @@ export class MenuComponent implements OnInit {
   constructor(private cartItem: CartItemService) {}
 
   ngOnInit(): void {
-    this.cartItem.get().subscribe((item: cartItem[]) => {
-      this.storedList = item;
-    });
     this.list = [
       {
         id: '0',
@@ -85,15 +82,19 @@ export class MenuComponent implements OnInit {
     ];
 
     this.typeFoodList = [...this.list];
-    for (let i = 0; i < this.storedList.length; i++) {
-      const element = this.storedList[i];
-      for (let j = 0; j < this.typeFoodList.length; j++) {
-        if (this.storedList[i].id == this.typeFoodList[j].id) {
-          this.typeFoodList[i].quantity = this.storedList[j].quantity;
-          break;
+
+    this.cartItem.get().subscribe((item: cartItem[]) => {
+      this.storedList = item;
+      for (let i = 0; i < this.storedList.length; i++) {
+        const element = this.storedList[i];
+        for (let j = 0; j < this.typeFoodList.length; j++) {
+          if (this.storedList[i].id == this.typeFoodList[j].id) {
+            this.typeFoodList[i].quantity = this.storedList[j].quantity;
+            break;
+          }
         }
       }
-    }
+    });
   }
   selectType: string = 'all';
 

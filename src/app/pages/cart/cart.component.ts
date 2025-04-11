@@ -19,8 +19,4 @@ export class CartComponent {
       this.cartItems = items;
     });
   }
-
-  clearCart = () => {
-    this.cartList.clear();
-  };
 }
