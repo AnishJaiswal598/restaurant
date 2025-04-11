@@ -13,15 +13,6 @@
       HOME
     </a>
     <a
-      routerLink="/about-us"
-      routerLinkActive="active"
-      class="item"
-      [ngClass]="currentTab == 'about' ? 'highlight' : ''"
-      (click)="changeCurrentTab('about')"
-    >
-      ABOUT US
-    </a>
-    <a
       routerLink="/menu"
       routerLinkActive="active"
       class="item"
@@ -29,6 +20,15 @@
       (click)="changeCurrentTab('menu')"
     >
       MENU
+    </a>
+    <a
+      routerLink="/about-us"
+      routerLinkActive="active"
+      class="item"
+      [ngClass]="currentTab == 'about' ? 'highlight' : ''"
+      (click)="changeCurrentTab('about')"
+    >
+      ABOUT US
     </a>
     <a
       routerLink="/team"
@@ -39,6 +39,15 @@
     >
       TEAM
     </a>
-    <a class="item">CART</a>
+    <a
+      routerLink="/cart"
+      routerLinkActive="active"
+      class="item"
+      [ngClass]="currentTab == 'cart' ? 'highlight' : ''"
+      (click)="changeCurrentTab('cart')"
+    >
+      <mat-icon>shopping_cart</mat-icon>
+    </a>
+    <a class="item" href=""><mat-icon>account_circle</mat-icon></a>
   </div>
 </div>

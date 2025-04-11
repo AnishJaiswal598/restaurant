@@ -1,0 +1,28 @@
+<div class="outer-container">
+  <div class="head">SUMMARY</div>
+  <div class="calculations">
+    <div class="item">
+      <div class="title">Subtotal</div>
+      <div class="cost">{{ getCost() }}</div>
+    </div>
+    <div class="item">
+      <div class="title">Shipping</div>
+      <div class="cost">{{ shipping }}</div>
+    </div>
+    <div class="item">
+      <div class="title">Handling</div>
+      <div class="cost">{{ handling }}</div>
+    </div>
+    <div class="item">
+      <div class="title">GST (18%)</div>
+      <div class="cost">{{ gst }}</div>
+    </div>
+  </div>
+  <div class="item item-total">
+    <div class="title">TOTAL</div>
+    <div class="cost">{{ netTotal() }}</div>
+  </div>
+  <div class="order">
+    <button (click)="clearCart()" class="order-but">Place Order</button>
+  </div>
+</div>
