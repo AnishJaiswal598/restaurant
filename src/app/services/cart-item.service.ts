@@ -18,7 +18,7 @@ export class CartItemService {
     if (existingMeal) {
       existingMeal.quantity += quantity;
     } else {
-      currentCart.push(item);
+      currentCart.push({ ...item, quantity: 1 });
     }
     currentCart = currentCart.filter((cart) => {
       return cart.quantity > 0;
