@@ -2,7 +2,7 @@
   <div class="image-outer">
     <img class="image" [src]="foodItem.image" />
     <div class="to-cart">
-      @if (quantity==0) {
+      @if (foodItem.quantity==0) {
       <button class="but" (click)="changeQuantity('add', foodItem)">
         Add to Cart
       </button>
@@ -12,7 +12,7 @@
           <mat-icon>remove</mat-icon>
         </button>
         <span class="quant">
-          {{ quantity }}
+          {{ foodItem.quantity }}
         </span>
         <button class="small-but" (click)="changeQuantity('add', foodItem)">
           <mat-icon>add</mat-icon>

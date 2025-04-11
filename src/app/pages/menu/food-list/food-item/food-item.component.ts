@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { foodItem } from '../../../../interfaces/foodItem.interface';
 import { CartItemService } from '../../../../services/cart-item.service';
+import { cartItem } from '../../../../interfaces/cartItem.interface';
 
 @Component({
   selector: 'app-food-item',
@@ -12,23 +12,23 @@ import { CartItemService } from '../../../../services/cart-item.service';
 })
 export class FoodItemComponent {
   constructor(private cartItem: CartItemService) {}
-  @Input() foodItem: foodItem = {
+  @Input() foodItem: cartItem = {
     id: '',
     name: '',
     image: '',
     ingredients: [''],
     price: 0,
     type: '',
+    quantity: 0,
   };
-  quantity: number = 0;
 
-  changeQuantity = (type: string, item: foodItem) => {
+  changeQuantity = (type: string, item: cartItem) => {
     if (type == 'add') {
       this.cartItem.set({ ...this.foodItem, quantity: 1 });
-      this.quantity += 1;
+      this.foodItem.quantity += 1;
     } else {
       this.cartItem.set({ ...this.foodItem, quantity: -1 });
-      this.quantity -= 1;
+      this.foodItem.quantity -= 1;
     }
   };
 }

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FoodItemComponent } from './food-item/food-item.component';
-import { foodItem } from '../../../interfaces/foodItem.interface';
+import { cartItem } from '../../../interfaces/cartItem.interface';
 
 @Component({
   selector: 'app-food-list',
@@ -10,5 +10,5 @@ import { foodItem } from '../../../interfaces/foodItem.interface';
   styleUrl: './food-list.component.css',
 })
 export class FoodListComponent {
-  @Input() foodList: foodItem[] = [];
+  @Input() foodList: cartItem[] = [];
 }
