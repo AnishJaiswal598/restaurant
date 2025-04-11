@@ -2,11 +2,11 @@
   <div class="header">My Cart</div>
   <div class="section">
     <div class="left">
-      <app-cart-list></app-cart-list>
+      <app-cart-list [cartItems]="cartItems"></app-cart-list>
     </div>
     <div class="right">
       <div class="summary">
-        <app-cart-summary></app-cart-summary>
+        <app-cart-summary [cartItems]="cartItems"></app-cart-summary>
       </div>
       <div class="order">
         <button (click)="clearCart()" class="order-but">Place Order</button>

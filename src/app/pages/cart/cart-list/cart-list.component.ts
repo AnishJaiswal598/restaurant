@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CartItemService } from '../../../services/cart-item.service';
 import { cartItem } from '../../../interfaces/cartItem.interface';
 import { FoodItemComponent } from '../../menu/food-list/food-item/food-item.component';
@@ -10,12 +10,6 @@ import { FoodItemComponent } from '../../menu/food-list/food-item/food-item.comp
   templateUrl: './cart-list.component.html',
   styleUrl: './cart-list.component.css',
 })
-export class CartListComponent implements OnInit {
-  cartItems: cartItem[] = [];
-  constructor(private cartList: CartItemService) {}
-  ngOnInit(): void {
-    this.cartList.get().subscribe((items: cartItem[]) => {
-      this.cartItems = items;
-    });
-  }
+export class CartListComponent {
+  @Input() cartItems: cartItem[] = [];
 }
