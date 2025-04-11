@@ -3,16 +3,18 @@
     <img class="image" [src]="foodItem.image" />
     <div class="to-cart">
       @if (quantity==0) {
-      <button class="but" (click)="changeQuantity('add')">Add to Cart</button>
+      <button class="but" (click)="changeQuantity('add', foodItem)">
+        Add to Cart
+      </button>
       }@else {
       <div class="small-but-container">
-        <button class="small-but" (click)="changeQuantity('remove')">
+        <button class="small-but" (click)="changeQuantity('remove', foodItem)">
           <mat-icon>remove</mat-icon>
         </button>
         <span class="quant">
           {{ quantity }}
         </span>
-        <button class="small-but" (click)="changeQuantity('add')">
+        <button class="small-but" (click)="changeQuantity('add', foodItem)">
           <mat-icon>add</mat-icon>
         </button>
       </div>

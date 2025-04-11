@@ -6,17 +6,9 @@
   letter-spacing: 2px;
   line-height: 0.8;
   margin: 0;
-  padding: 0 20px 0px;
+  padding-top: 40px;
   position: relative;
   text-transform: capitalize;
-}
-
-.head {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  height: 120px;
 }
 
 .outer-container {
@@ -24,4 +16,14 @@
   flex-direction: column;
   align-items: center;
   height: 78vh;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  width: 80vw;
+}
+
+.left .right {
+  border: 1px solid black;
 }

@@ -17,6 +17,7 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
     this.list = [
       {
+        id: '0',
         name: 'Sandwich',
         image:
           'https://recipes.timesofindia.com/thumb/83740315.cms?width=1200&height=900',
@@ -25,6 +26,7 @@ export class MenuComponent implements OnInit {
         type: 'lunch',
       },
       {
+        id: '1',
         name: 'Sandwich',
         image:
           'https://recipes.timesofindia.com/thumb/83740315.cms?width=1200&height=900',
@@ -33,6 +35,7 @@ export class MenuComponent implements OnInit {
         type: 'breakfast',
       },
       {
+        id: '2',
         name: 'Sandwich',
         image:
           'https://recipes.timesofindia.com/thumb/83740315.cms?width=1200&height=900',
@@ -41,6 +44,7 @@ export class MenuComponent implements OnInit {
         type: 'dinner',
       },
       {
+        id: '3',
         name: 'Sandwich',
         image:
           'https://recipes.timesofindia.com/thumb/83740315.cms?width=1200&height=900',
@@ -49,6 +53,7 @@ export class MenuComponent implements OnInit {
         type: 'dinner',
       },
       {
+        id: '4',
         name: 'Sandwich',
         image:
           'https://recipes.timesofindia.com/thumb/83740315.cms?width=1200&height=900',
@@ -57,6 +62,7 @@ export class MenuComponent implements OnInit {
         type: 'coffee',
       },
       {
+        id: '5',
         name: 'Sandwich',
         image:
           'https://recipes.timesofindia.com/thumb/83740315.cms?width=1200&height=900',
