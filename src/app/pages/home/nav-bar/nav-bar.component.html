@@ -40,6 +40,15 @@
       TEAM
     </a>
     <a
+      routerLink="/book-table"
+      routerLinkActive="active"
+      class="item"
+      [ngClass]="currentTab == 'book' ? 'highlight' : ''"
+      (click)="changeCurrentTab('book')"
+    >
+      BOOK TABLE
+    </a>
+    <a
       routerLink="/cart"
       routerLinkActive="active"
       class="item"
