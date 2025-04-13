@@ -12,7 +12,11 @@
       <mat-icon>chevron_left</mat-icon>
     </button>
     @for (date of visibleDates(); track $index) {
-    <button class="next-date">
+    <button
+      class="next-date"
+      [ngClass]="this.selectedDate == date.Date ? 'highlight-date' : ''"
+      (click)="setSelectedDate(date.Date)"
+    >
       <div class="day">{{ date.dayType }}</div>
       <div class="date">{{ date.Date }}</div>
     </button>

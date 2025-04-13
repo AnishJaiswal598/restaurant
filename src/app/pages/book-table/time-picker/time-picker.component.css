@@ -63,3 +63,7 @@
   border-color: #ca3d26;
   transform: scale(1.05);
 }
+
+.select-slot {
+  background-color: rgb(121, 113, 113);
+}

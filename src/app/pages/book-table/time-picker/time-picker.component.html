@@ -5,7 +5,14 @@
       <div class="dayTime-head">Morning</div>
       <div class="morning">
         @for (slot of morningSlots; track $index) {
-        <button class="time">{{ slot }}</button>
+        <button
+          (click)="selectTimeSlot(slot.hour)"
+          class="time"
+          [disabled]="slot.hour < nextHour"
+          [ngClass]="this.selectedTimeSlot == slot.hour ? 'select-slot' : ''"
+        >
+          {{ slot.bookingTime }}
+        </button>
         }
       </div>
     </div>
@@ -13,7 +20,14 @@
       <div class="dayTime-head">Afternoon</div>
       <div class="afternoon">
         @for (slot of afternoonSlots; track $index) {
-        <button class="time">{{ slot }}</button>
+        <button
+          (click)="selectTimeSlot(slot.hour)"
+          class="time"
+          [disabled]="slot.hour < nextHour"
+          [ngClass]="this.selectedTimeSlot == slot.hour ? 'select-slot' : ''"
+        >
+          {{ slot.bookingTime }}
+        </button>
         }
       </div>
     </div>
@@ -21,7 +35,14 @@
       <div class="dayTime-head">Evening</div>
       <div class="evening">
         @for (slot of eveningSlots; track $index) {
-        <button class="time">{{ slot }}</button>
+        <button
+          (click)="selectTimeSlot(slot.hour)"
+          class="time"
+          [disabled]="slot.hour < nextHour"
+          [ngClass]="this.selectedTimeSlot == slot.hour ? 'select-slot' : ''"
+        >
+          {{ slot.bookingTime }}
+        </button>
         }
       </div>
     </div>
