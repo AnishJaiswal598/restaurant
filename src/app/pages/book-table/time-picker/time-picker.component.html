@@ -1,1 +1,29 @@
-<p>time-picker works!</p>
+<div class="time-section">
+  <div class="time-head">Time Slots</div>
+  <div class="time-slots">
+    <div class="section">
+      <div class="dayTime-head">Morning</div>
+      <div class="morning">
+        @for (slot of morningSlots; track $index) {
+        <button class="time">{{ slot }}</button>
+        }
+      </div>
+    </div>
+    <div class="section">
+      <div class="dayTime-head">Afternoon</div>
+      <div class="afternoon">
+        @for (slot of afternoonSlots; track $index) {
+        <button class="time">{{ slot }}</button>
+        }
+      </div>
+    </div>
+    <div class="section">
+      <div class="dayTime-head">Evening</div>
+      <div class="evening">
+        @for (slot of eveningSlots; track $index) {
+        <button class="time">{{ slot }}</button>
+        }
+      </div>
+    </div>
+  </div>
+</div>
