@@ -9,27 +9,27 @@ import { Component } from '@angular/core';
 export class TeamComponent {
   chefs = [
     {
-      image: 'assets/chef1.jpg',
+      image: 'assets/chefs/chef1.jpg',
       name: 'Raghav Iyer',
       description: 'South Indian spice maestro and innovator.',
     },
     {
-      image: 'assets/chef2.jpg',
+      image: 'assets/chefs/chef2.jpg',
       name: 'Anaya Sharma',
       description: 'Queen of vibrant modern Indian fusion.',
     },
     {
-      image: 'assets/chef3.jpg',
+      image: 'assets/chefs/chef3.jpg',
       name: 'Dev Kapoor',
       description: 'Tandoor specialist with a global twist.',
     },
     {
-      image: 'assets/chef4.jpg',
+      image: 'assets/chefs/chef4.jpg',
       name: 'Sana Qureshi',
       description: 'Mughlai elegance on every single plate.',
     },
     {
-      image: 'assets/chef5.jpg',
+      image: 'assets/chefs/chef5.jpg',
       name: 'Mehendra Joshi',
       description: 'Reinventing street food with gourmet flair.',
     },
