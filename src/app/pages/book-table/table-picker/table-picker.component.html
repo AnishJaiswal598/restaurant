@@ -1,1 +1,23 @@
-<p>table-picker works!</p>
+<div class="outer-container">
+  <div class="left-tables">
+    <app-table-for-2 [tableNo]="1"></app-table-for-2>
+    <app-table-for-2 [tableNo]="2"></app-table-for-2>
+    <app-table-for-4 [tableNo]="3"></app-table-for-4>
+    <app-table-for-4 [tableNo]="4"></app-table-for-4>
+  </div>
+  <div class="right-tables">
+    <div class="top-left">
+      <app-table-for-6 [tableNo]="5"></app-table-for-6>
+    </div>
+    <div class="top-right">
+      <app-table-for-12 [tableNo]="8"></app-table-for-12>
+    </div>
+    <div class="center"><app-table-for-6 [tableNo]="7"></app-table-for-6></div>
+    <div class="bottom-left">
+      <app-table-for-8 [tableNo]="6"></app-table-for-8>
+    </div>
+    <div class="bottom-right">
+      <app-table-for-8 [tableNo]="9"></app-table-for-8>
+    </div>
+  </div>
+</div>
