@@ -1,7 +1,41 @@
 .time-section {
-  padding-top: 4px;
+  padding-top: 8px;
+  padding-left: 20px;
   height: 100%;
-  border-left: 2px solid grey;
+  border-left: 2px solid #ccc;
+  box-sizing: border-box;
+}
+
+.time-head {
+  color: #ca3d26;
+  font-family: "Dancing Script", cursive;
+  font-size: 32px;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-top: 20px;
+  text-transform: capitalize;
+}
+
+.time-slots {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-left: 10px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dayTime-head {
+  font-size: 20px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 5px;
 }
 
 .morning,
@@ -9,33 +43,23 @@
 .evening {
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
 }
 
 .time {
-  width: 100px;
-  border: 2px solid black;
+  width: 120px;
+  padding: 8px 12px;
+  border: 2px solid #333;
   border-radius: 10px;
-  padding: 5px;
+  background-color: #fff;
   cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
 }
 
-.time-head {
+.time:hover {
+  background-color: #f2f2f2;
   color: #ca3d26;
-  display: inline-block;
-  font-family: "Dancing Script", cursive;
-  font-size: 30px;
-  letter-spacing: 2px;
-  line-height: 0.8;
-  margin: 0;
-  padding: 0 20px 0px;
-  position: relative;
-  text-transform: capitalize;
-}
-
-.time-slots {
-  height: 60%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding-left: 10px;
+  border-color: #ca3d26;
+  transform: scale(1.05);
 }
