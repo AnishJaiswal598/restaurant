@@ -15,6 +15,7 @@ export class DatePickerComponent {
   disableBack: boolean = true;
   dateList: dayDate[] = [];
   start: number = 0;
+  selectedDate: number = 0;
   ngOnInit(): void {
     this.dateList.push({ dayType: 'Today', Date: new Date().getDate() });
     for (let i = 1; i < 30; i++) {
@@ -27,6 +28,7 @@ export class DatePickerComponent {
         Date: new Date(Date.now() + i * 86400000).getDate(),
       });
     }
+    this.selectedDate = new Date().getDate();
   }
 
   getYear = () => {
@@ -67,5 +69,9 @@ export class DatePickerComponent {
   disableFrontAndBack = () => {
     this.disableBack = this.start == 0 ? true : false;
     this.disableFront = this.start == 22 ? true : false;
+  };
+
+  setSelectedDate = (date: number) => {
+    this.selectedDate = date;
   };
 }

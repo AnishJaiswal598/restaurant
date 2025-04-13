@@ -83,3 +83,7 @@
   pointer-events: none;
   color: rgb(199, 199, 199);
 }
+
+.highlight-date {
+  background-color: rgb(121, 113, 113);
+}

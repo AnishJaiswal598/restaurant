@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DatePickerComponent } from './date-picker/date-picker.component';
 import { TimePickerComponent } from './time-picker/time-picker.component';
 import { TablePickerComponent } from './table-picker/table-picker.component';
@@ -10,4 +10,16 @@ import { TablePickerComponent } from './table-picker/table-picker.component';
   templateUrl: './book-table.component.html',
   styleUrl: './book-table.component.css',
 })
-export class BookTableComponent {}
+export class BookTableComponent implements OnInit {
+  public val = [
+    {
+      tableId: 1,
+      slotTime: '9-10',
+    },
+    {
+      tableId: 2,
+      slotTime: '10-11',
+    },
+  ];
+  ngOnInit(): void {}
+}
