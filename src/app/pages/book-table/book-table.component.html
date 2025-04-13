@@ -1,32 +1,5 @@
 <div class="outer-container">
-  <div class="date-section">
-    <div class="header">
-      <mat-icon>date_range</mat-icon>
-      <div class="month-year">{{ getMonth() }} {{ getYear() }}</div>
-    </div>
-    <div class="date-scroller">
-      <button
-        (click)="goLeft()"
-        class="go-left"
-        [ngClass]="this.disableBack ? 'disable' : ''"
-      >
-        <mat-icon>chevron_left</mat-icon>
-      </button>
-      @for (date of visibleDates(); track $index) {
-      <button class="next-date">
-        <div class="day">{{ date.dayType }}</div>
-        <div class="date">{{ date.Date }}</div>
-      </button>
-      }
-      <button
-        (click)="goRight()"
-        class="go-right"
-        [ngClass]="this.disableFront ? 'disable' : ''"
-      >
-        <mat-icon>chevron_right</mat-icon>
-      </button>
-    </div>
-  </div>
+  <app-date-picker></app-date-picker>
   <div class="selection-section">
     <div class="table-section"></div>
     <div class="time-section"></div>
