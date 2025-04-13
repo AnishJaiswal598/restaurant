@@ -71,7 +71,7 @@
 }
 
 ::ng-deep .mat-icon.mat-icon-no-color {
-  font-size: 20px !important;
+  font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;

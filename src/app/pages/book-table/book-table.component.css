@@ -44,3 +44,8 @@
 .go-left {
   margin-right: 50px;
 }
+
+.disable {
+  pointer-events: none;
+  color: rgb(199, 199, 199);
+}
