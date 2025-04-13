@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { dayDate } from '../../interfaces/dayDate.interface';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-book-table',
   standalone: true,
-  imports: [MatIconModule],
+  imports: [MatIconModule, CommonModule],
   templateUrl: './book-table.component.html',
   styleUrl: './book-table.component.css',
 })
 export class BookTableComponent implements OnInit {
+  disableFront: boolean = false;
+  disableBack: boolean = true;
   dateList: dayDate[] = [];
   start: number = 0;
   ngOnInit(): void {
@@ -27,13 +30,16 @@ export class BookTableComponent implements OnInit {
   }
 
   getYear = () => {
-    return new Date(Date.now() + 86400000).getFullYear();
+    return new Date(Date.now() + (this.start + 4) * 86400000).getFullYear();
   };
 
   getMonth = () => {
-    return new Date(Date.now() + 86400000).toLocaleString('default', {
-      month: 'long',
-    });
+    return new Date(Date.now() + (this.start + 4) * 86400000).toLocaleString(
+      'default',
+      {
+        month: 'long',
+      }
+    );
   };
 
   visibleDates = () => {
@@ -41,22 +47,25 @@ export class BookTableComponent implements OnInit {
   };
 
   goLeft = () => {
-    if (this.start > 0) {
-      this.start -= 1;
+    if (this.start - 4 > 0) {
+      this.start -= 5;
+    } else {
+      this.start = 0;
     }
+    this.disableFrontAndBack();
   };
 
   goRight = () => {
-    if (this.start + 8 < 30) {
-      this.start += 1;
+    if (this.start + 12 < 30) {
+      this.start += 5;
+    } else {
+      this.start = 22;
     }
+    this.disableFrontAndBack();
   };
 
-  onScroll = (event: WheelEvent) => {
-    if (event.deltaY > 0) {
-      this.goRight();
-    } else {
-      this.goLeft();
-    }
+  disableFrontAndBack = () => {
+    this.disableBack = this.start == 0 ? true : false;
+    this.disableFront = this.start == 22 ? true : false;
   };
 }
