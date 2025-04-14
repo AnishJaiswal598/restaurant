@@ -2,25 +2,37 @@
   <div class="logo"></div>
   <div class="contact-lines">
     <div class="address">
-      20, floor, Queenslad Victoria Building. 60 california street california
-      USA
+      Shop No. 12, Lotus Arcade, MG Road, Bandra West, Mumbai - 400050,
+      Maharashtra, India
     </div>
-    <div class="email">hello&#64;tastybites.com</div>
-    <div class="number">+88 000 0000 1111</div>
+    <a [attr.href]="'mailto:' + emailAddress" class="email">{{
+      emailAddress
+    }}</a>
+    <a [attr.href]="'tel:' + mobileNumber" class="number">{{ mobileNumber }}</a>
   </div>
   <div class="social-media">
-    <a class="social-icon" id="facebook"><mat-icon>facebook</mat-icon></a>
-    <a class="social-icon" id="instagram">
+    <a href="https://www.facebook.com/" class="social-icon" id="facebook"
+      ><mat-icon>facebook</mat-icon></a
+    >
+    <a href="https://www.instagram.com/" class="social-icon" id="instagram">
       <mat-icon>photo_camera</mat-icon>
     </a>
-    <a class="social-icon" id="public"><mat-icon>public</mat-icon></a>
-    <a href="#" class="social-icon snapchat" title="Snapchat"
+    <a href="https://www.zomato.com/" class="social-icon" id="public"
+      ><mat-icon>public</mat-icon></a
+    >
+    <a
+      href="https://www.snapchat.com/"
+      class="social-icon snapchat"
+      title="Snapchat"
       ><i class="material-icons">snapchat</i></a
     >
-    <a href="#" class="social-icon telegram" title="Telegram"
+    <a
+      href="https://telegram.org/"
+      class="social-icon telegram"
+      title="Telegram"
       ><i class="material-icons">telegram</i></a
     >
-    <a href="#" class="social-icon discord" title="Discord"
+    <a href="https://discord.com/" class="social-icon discord" title="Discord"
       ><i class="material-icons">discord</i></a
     >
   </div>

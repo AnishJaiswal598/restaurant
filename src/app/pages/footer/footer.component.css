@@ -56,8 +56,20 @@
 .number {
   padding-top: 15px;
   color: #ca3d26;
+  text-decoration: none;
 }
 
 .app-name {
   color: #ca3d26;
+}
+
+.email:hover,
+.number:hover {
+  text-decoration: underline;
+}
+
+.social-icon mat-icon:hover,
+.social-icon i:hover {
+  cursor: pointer;
+  color: blue;
 }
