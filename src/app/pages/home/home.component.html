@@ -2,13 +2,13 @@
   class="outer-container"
   [style.background]="'url(' + currentSlide.image + ')'"
 >
-  <button id="left-button" (click)="moveSlide('left')">
+  <button id="left-button" class="button" (click)="moveSlide('left')">
     <mat-icon>chevron_left</mat-icon>
   </button>
   <div class="first-line">{{ currentSlide.title }}</div>
   <div class="second-line">{{ currentSlide.head }}</div>
   <button class="but">{{ currentSlide.buttonContent }}</button>
-  <button id="right-button" (click)="moveSlide('right')">
+  <button id="right-button" class="button" (click)="moveSlide('right')">
     <mat-icon>chevron_right</mat-icon>
   </button>
 </div>
