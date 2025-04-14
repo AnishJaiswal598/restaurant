@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
@@ -8,8 +8,9 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   currentSlideIndex = 0;
+  slideInterval: any;
   slides = [
     {
       image: 'assets/home/slide_1.jpg',
@@ -33,14 +34,19 @@ export class HomeComponent implements OnInit {
   currentSlide = this.slides[this.currentSlideIndex];
 
   ngOnInit(): void {
-    setInterval(() => {
+    this.startSlideTimer();
+  }
+
+  startSlideTimer = () => {
+    this.slideInterval = setInterval(() => {
       this.currentSlideIndex =
         (this.currentSlideIndex + 1) % this.slides.length;
       this.currentSlide = this.slides[this.currentSlideIndex];
     }, 5000);
-  }
+  };
 
   moveSlide = (direction: string): void => {
+    clearInterval(this.slideInterval);
     if (direction == 'left') {
       this.currentSlideIndex =
         (this.currentSlideIndex - 1 + this.slides.length) % this.slides.length;
@@ -50,5 +56,10 @@ export class HomeComponent implements OnInit {
         (this.currentSlideIndex + 1) % this.slides.length;
       this.currentSlide = this.slides[this.currentSlideIndex];
     }
+    this.startSlideTimer();
   };
+
+  ngOnDestroy(): void {
+    clearInterval(this.slideInterval);
+  }
 }
