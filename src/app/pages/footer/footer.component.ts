@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { email, mobileNo } from '../../constants/contact';
 
 @Component({
   selector: 'app-footer',
@@ -9,6 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './footer.component.css',
 })
 export class FooterComponent {
+  mobileNumber: string = mobileNo;
+  emailAddress: string = email;
   getCurrentYear = () => {
     return new Date().getFullYear();
   };

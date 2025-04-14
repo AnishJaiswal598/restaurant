@@ -2,19 +2,27 @@
   <div class="left-container">
     <div class="contact-item">
       <mat-icon>email</mat-icon>
-      <span>{{ email }}</span>
+      <span>Email: </span>
+      <a class="link" [attr.href]="'mailto:' + email">{{ email }}</a>
     </div>
     <div class="contact-item">
       <mat-icon>phone</mat-icon>
-      <span>{{ telephone }}</span>
+      <span>Telephone: </span>
+      <a class="link" [attr.href]="'tel:' + telephone">{{ telephone }}</a>
     </div>
   </div>
 
   <div class="right-container">
     <div class="social-icons">
-      <div class="icon" id="facebook"><mat-icon>facebook</mat-icon></div>
-      <div class="icon" id="instagram"><mat-icon>photo_camera</mat-icon></div>
-      <div class="icon" id="public"><mat-icon>public</mat-icon></div>
+      <a href="https://www.facebook.com/" class="icon" id="facebook"
+        ><mat-icon>facebook</mat-icon></a
+      >
+      <a href="https://www.instagram.com/" class="icon" id="instagram"
+        ><mat-icon>photo_camera</mat-icon></a
+      >
+      <a href="https://www.zomato.com/" class="icon" id="public"
+        ><mat-icon>public</mat-icon></a
+      >
     </div>
     <button class="login">LOGIN / SIGNUP</button>
   </div>

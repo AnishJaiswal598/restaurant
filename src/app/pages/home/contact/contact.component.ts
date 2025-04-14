@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { mobileNo, email } from '../../../constants/contact';
 
 @Component({
   selector: 'app-contact',
@@ -9,6 +10,6 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './contact.component.css',
 })
 export class ContactComponent {
-  email: string = 'Email: Info@Restaurant.Com';
-  telephone: string = 'Telephone: +1 800 234 5678';
+  email: string = email;
+  telephone: string = mobileNo;
 }
