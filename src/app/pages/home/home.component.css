@@ -1,10 +1,13 @@
 .outer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 70px;
+  justify-content: center;
   position: relative;
   z-index: 0;
   width: 99vw;
   height: 87vh;
-  background-size: cover;
-  animation: slideshow 20s infinite;
 }
 
 .outer-container::before {
@@ -20,17 +23,63 @@
   z-index: -1;
 }
 
-@keyframes slideshow {
-  0% {
-    background-image: url("../../../assets/home/slide_1.jpg");
-  }
-  33.33% {
-    background-image: url("../../../assets/home/slide_2.jpg");
-  }
-  66.66% {
-    background-image: url("../../../assets/home/slide_3.jpg");
-  }
-  100% {
-    background-image: url("../../../assets/home/slide_1.jpg"); /* Loop back to the first image */
-  }
+.first-line,
+.second-line,
+.but {
+  font-size: 70px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
+.first-line {
+  font-family: "Dancing Script", cursive;
+}
+
+.second-line {
+  font-size: 50px;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-weight: 300;
+}
+
+.but {
+  border: 1px solid white;
+  background-color: inherit;
+  color: #fff;
+  display: inline-block;
+  font-size: 13px;
+  margin-top: -25px;
+  padding: 10px 30px;
+  letter-spacing: 3px;
+}
+
+.but:hover {
+  background-color: #ca3d26;
+  cursor: pointer;
+}
+
+#left-button,
+#right-button {
+  position: absolute;
+  color: rgb(185, 180, 180);
+  background-color: inherit;
+  border: none;
+}
+
+#left-button {
+  left: 60px;
+}
+
+#right-button {
+  right: 60px;
+}
+
+::ng-deep .mat-icon.mat-icon-no-color {
+  font-size: 40px;
+}
+
+#left-button:hover,
+#right-button:hover {
+  color: white;
+  cursor: pointer;
 }
