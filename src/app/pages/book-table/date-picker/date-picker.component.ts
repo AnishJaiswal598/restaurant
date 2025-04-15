@@ -17,7 +17,9 @@ export class DatePickerComponent {
   start: number = 0;
   selectedDate: number = 0;
   ngOnInit(): void {
-    this.dateList.push({ dayType: 'Today', Date: new Date().getDate() });
+    if (new Date().getHours() != 23) {
+      this.dateList.push({ dayType: 'Today', Date: new Date().getDate() });
+    }
     for (let i = 1; i < 30; i++) {
       this.dateList.push({
         dayType: new Date(Date.now() + i * 86400000)
@@ -28,7 +30,7 @@ export class DatePickerComponent {
         Date: new Date(Date.now() + i * 86400000).getDate(),
       });
     }
-    this.selectedDate = new Date().getDate();
+    this.selectedDate = this.dateList[0].Date;
   }
 
   getYear = () => {

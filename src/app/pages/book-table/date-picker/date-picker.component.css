@@ -41,6 +41,7 @@
   background-color: #ffffff;
   padding: 6px 4px;
   border-radius: 6px;
+  border: 1px dotted rgb(123, 120, 120);
   transition: background-color 0.2s, box-shadow 0.2s;
 }
 
@@ -51,10 +52,11 @@
 
 .next-date .day {
   font-size: 12px;
-  color: #666;
+  color: #333;
 }
 
 .next-date .date {
+  padding-top: 2px;
   font-size: 14px;
   font-weight: bold;
   color: #333;
@@ -85,5 +87,10 @@
 }
 
 .highlight-date {
-  background-color: rgb(121, 113, 113);
+  background-color: #f16a56;
+  border: 1px solid #333;
+}
+
+.highlight-date:hover {
+  background-color: #f16a56;
 }
