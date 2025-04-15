@@ -1,5 +1,11 @@
 <div class="outer-container">
   <div class="header">My Cart</div>
+  @if(cartItems.length==0){
+  <div class="empty-message">
+    Hungry for something special? Let's
+    <a [routerLink]="'/menu'" id="redirect-button">fill up</a> your cart!
+  </div>
+  }@else {
   <div class="section">
     <div class="left">
       <app-cart-list [cartItems]="cartItems"></app-cart-list>
@@ -10,4 +16,5 @@
       </div>
     </div>
   </div>
+  }
 </div>
