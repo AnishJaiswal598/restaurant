@@ -9,7 +9,10 @@
           (click)="selectTimeSlot(slot.hour)"
           class="time"
           [disabled]="slot.hour < nextHour"
-          [ngClass]="this.selectedTimeSlot == slot.hour ? 'select-slot' : ''"
+          [ngClass]="{
+            'select-slot': this.selectedTimeSlot == slot.hour,
+            'disable-button': slot.hour < nextHour
+          }"
         >
           {{ slot.bookingTime }}
         </button>

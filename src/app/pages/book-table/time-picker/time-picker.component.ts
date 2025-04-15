@@ -14,7 +14,8 @@ export class TimePickerComponent implements OnInit {
   nextHour: number = 0;
 
   ngOnInit(): void {
-    this.nextHour = new Date().getHours() + 1;
+    // this.nextHour = new Date().getHours() + 1;
+    this.nextHour = 11;
     this.selectedTimeSlot = this.getNearestTimeSlot(this.nextHour);
   }
   morningSlots: time[] = [
