@@ -1,7 +1,10 @@
 <div class="outer-container">
   <app-date-picker (currentDate)="selectedDate($event)"></app-date-picker>
   <div class="selection-section">
-    <app-table-picker></app-table-picker>
-    <app-time-picker [date]="date"></app-time-picker>
+    <app-table-picker [date]="date" [time]="time"></app-table-picker>
+    <app-time-picker
+      (displayedTime)="setCurrentTime($event)"
+      [date]="date"
+    ></app-time-picker>
   </div>
 </div>

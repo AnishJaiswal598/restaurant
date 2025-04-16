@@ -1,8 +1,10 @@
 import {
   Component,
+  EventEmitter,
   Input,
   OnChanges,
   OnInit,
+  Output,
   SimpleChange,
   SimpleChanges,
 } from '@angular/core';
@@ -18,16 +20,19 @@ import { CommonModule } from '@angular/common';
 })
 export class TimePickerComponent implements OnInit, OnChanges {
   @Input() date: number = 0;
+  @Output() displayedTime = new EventEmitter<number>();
   selectedTimeSlot: number = 0;
   nextHour: number = 0;
 
   ngOnInit(): void {
     this.nextHour = new Date().getHours() + 1;
     this.selectedTimeSlot = this.getNearestTimeSlot(this.nextHour);
+    this.emitCurrentTime(this.selectedTimeSlot);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     this.selectedTimeSlot = this.getNearestTimeSlot(this.nextHour);
+    this.emitCurrentTime(this.selectedTimeSlot);
   }
 
   morningSlots: time[] = [
@@ -52,6 +57,7 @@ export class TimePickerComponent implements OnInit, OnChanges {
 
   selectTimeSlot = (time: number): void => {
     this.selectedTimeSlot = time;
+    this.emitCurrentTime(this.selectedTimeSlot);
   };
 
   getNearestTimeSlot = (time: number): number => {
@@ -70,4 +76,8 @@ export class TimePickerComponent implements OnInit, OnChanges {
   isCurrentDateSelectedDate = (): boolean => {
     return this.date == new Date().getDate();
   };
+
+  emitCurrentTime(time: number): void {
+    this.displayedTime.emit(time);
+  }
 }
