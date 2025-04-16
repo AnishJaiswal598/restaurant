@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { dayDate } from '../../../interfaces/dayDate.interface';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './date-picker.component.css',
 })
 export class DatePickerComponent {
+  @Output() currentDate = new EventEmitter<number>();
   disableFront: boolean = false;
   disableBack: boolean = true;
   dateList: dayDate[] = [];
@@ -75,5 +76,6 @@ export class DatePickerComponent {
 
   setSelectedDate = (date: number) => {
     this.selectedDate = date;
+    this.currentDate.emit(this.selectedDate);
   };
 }

@@ -8,10 +8,11 @@
         <button
           (click)="selectTimeSlot(slot.hour)"
           class="time"
-          [disabled]="slot.hour < nextHour"
+          [disabled]="slot.hour < nextHour && isCurrentDateSelectedDate()"
           [ngClass]="{
             'select-slot': this.selectedTimeSlot == slot.hour,
-            'disable-button': slot.hour < nextHour
+            'disable-button':
+              slot.hour < nextHour && isCurrentDateSelectedDate()
           }"
         >
           {{ slot.bookingTime }}
@@ -26,8 +27,12 @@
         <button
           (click)="selectTimeSlot(slot.hour)"
           class="time"
-          [disabled]="slot.hour < nextHour"
-          [ngClass]="this.selectedTimeSlot == slot.hour ? 'select-slot' : ''"
+          [disabled]="slot.hour < nextHour && isCurrentDateSelectedDate()"
+          [ngClass]="{
+            'select-slot': this.selectedTimeSlot == slot.hour,
+            'disable-button':
+              slot.hour < nextHour && isCurrentDateSelectedDate()
+          }"
         >
           {{ slot.bookingTime }}
         </button>
@@ -41,8 +46,12 @@
         <button
           (click)="selectTimeSlot(slot.hour)"
           class="time"
-          [disabled]="slot.hour < nextHour"
-          [ngClass]="this.selectedTimeSlot == slot.hour ? 'select-slot' : ''"
+          [disabled]="slot.hour < nextHour && isCurrentDateSelectedDate()"
+          [ngClass]="{
+            'select-slot': this.selectedTimeSlot == slot.hour,
+            'disable-button':
+              slot.hour < nextHour && isCurrentDateSelectedDate()
+          }"
         >
           {{ slot.bookingTime }}
         </button>
