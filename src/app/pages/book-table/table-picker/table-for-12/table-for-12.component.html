@@ -7,7 +7,9 @@
     <app-chair [availableStatus]="currentStatus"></app-chair>
     <app-chair [availableStatus]="currentStatus"></app-chair>
   </div>
-  <div class="rectangle">{{ tableNo }}</div>
+  <div appBooking currentStatus="{{ currentStatus }}" class="rectangle">
+    {{ tableNo }}
+  </div>
   <div class="right-chairs">
     <app-chair [availableStatus]="currentStatus" class="flipped"></app-chair>
     <app-chair [availableStatus]="currentStatus" class="flipped"></app-chair>

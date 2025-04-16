@@ -17,6 +17,7 @@ export class BookingChairDirective implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['currentStatus'].currentValue == 'booked') {
       this.el.nativeElement.style.backgroundColor = ' #a61919';
+      this.el.nativeElement.style.cursor = 'not-allowed';
     } else if (changes['currentStatus'].currentValue == 'progress') {
       this.el.nativeElement.style.backgroundColor = ' #8c8c02';
     } else {
