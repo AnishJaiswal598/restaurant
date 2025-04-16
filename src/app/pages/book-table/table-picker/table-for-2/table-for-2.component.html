@@ -1,8 +1,4 @@
-<button
-  class="outer-container"
-  [disabled]="currentStatus === 'booked'"
-  [ngClass]="currentStatus == 'booked' ? 'disable' : ''"
->
+<button class="outer-container" (click)="alterBookingStatus()">
   <app-chair [availableStatus]="currentStatus"></app-chair>
   <div appBooking currentStatus="{{ currentStatus }}" class="rectangle">
     {{ tableNo }}
