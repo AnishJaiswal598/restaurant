@@ -20,7 +20,8 @@ import { CommonModule } from '@angular/common';
 })
 export class BookTableComponent implements OnInit {
   bookedTables: booking[] = [];
-  date: number = new Date().getDate();
+  date: number =
+    new Date().getTime() < 23 ? new Date().getDate() : new Date().getDate() + 1;
   time: number = 0;
 
   constructor(private cdr: ChangeDetectorRef) {}

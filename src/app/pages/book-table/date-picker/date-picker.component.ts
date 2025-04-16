@@ -76,6 +76,7 @@ export class DatePickerComponent {
 
   setSelectedDate = (date: number) => {
     this.selectedDate = date;
+    console.log(this.selectedDate);
     this.currentDate.emit(this.selectedDate);
   };
 }
