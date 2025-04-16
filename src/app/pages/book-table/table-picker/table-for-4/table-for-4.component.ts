@@ -12,4 +12,12 @@ import { BookingDirective } from '../../../../directives/booking.directive';
 export class TableFor4Component {
   @Input() tableNo: number = 0;
   @Input() currentStatus: string = 'available';
+
+  alterBookingStatus = (): void => {
+    if (this.currentStatus == 'available') {
+      this.currentStatus = 'progress';
+    } else if (this.currentStatus == 'progress') {
+      this.currentStatus = 'available';
+    }
+  };
 }
