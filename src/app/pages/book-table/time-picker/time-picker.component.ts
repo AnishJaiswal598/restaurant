@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChange,
+  SimpleChanges,
+} from '@angular/core';
 import { time } from '../../../interfaces/time.interface';
 import { CommonModule } from '@angular/common';
 
@@ -9,15 +16,20 @@ import { CommonModule } from '@angular/common';
   templateUrl: './time-picker.component.html',
   styleUrl: './time-picker.component.css',
 })
-export class TimePickerComponent implements OnInit {
+export class TimePickerComponent implements OnInit, OnChanges {
+  @Input() date: number = 0;
   selectedTimeSlot: number = 0;
   nextHour: number = 0;
 
   ngOnInit(): void {
-    // this.nextHour = new Date().getHours() + 1;
-    this.nextHour = 11;
+    this.nextHour = new Date().getHours() + 1;
     this.selectedTimeSlot = this.getNearestTimeSlot(this.nextHour);
   }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.selectedTimeSlot = this.getNearestTimeSlot(this.nextHour);
+  }
+
   morningSlots: time[] = [
     { bookingTime: '9:00 - 10:00', hour: 9 },
     { bookingTime: '10:00 - 11:00', hour: 10 },
@@ -38,11 +50,14 @@ export class TimePickerComponent implements OnInit {
     { bookingTime: '11:00 - 12:00', hour: 23 },
   ];
 
-  selectTimeSlot = (time: number) => {
+  selectTimeSlot = (time: number): void => {
     this.selectedTimeSlot = time;
   };
 
   getNearestTimeSlot = (time: number): number => {
+    if (!this.isCurrentDateSelectedDate()) {
+      return 9;
+    }
     if (time < 9) {
       return 9;
     } else if (time > 15 && time < 18) {
@@ -50,5 +65,9 @@ export class TimePickerComponent implements OnInit {
     } else {
       return time;
     }
+  };
+
+  isCurrentDateSelectedDate = (): boolean => {
+    return this.date == new Date().getDate();
   };
 }

@@ -11,6 +11,7 @@ import { TablePickerComponent } from './table-picker/table-picker.component';
   styleUrl: './book-table.component.css',
 })
 export class BookTableComponent implements OnInit {
+  date: number = new Date().getDate();
   public val = [
     {
       tableId: 1,
@@ -22,4 +23,8 @@ export class BookTableComponent implements OnInit {
     },
   ];
   ngOnInit(): void {}
+
+  selectedDate = (currentDate: number) => {
+    this.date = currentDate;
+  };
 }
