@@ -10,4 +10,5 @@ import { ChairComponent } from '../chair/chair.component';
 })
 export class TableFor12Component {
   @Input() tableNo: number = 0;
+  @Input() currentStatus: string = 'available';
 }

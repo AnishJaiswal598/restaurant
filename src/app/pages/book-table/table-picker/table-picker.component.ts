@@ -38,7 +38,16 @@ export class TablePickerComponent implements OnChanges {
         (table) => this.time == table.time
       );
     }
-    console.log(this.currentDateTables);
-    console.log(this.timeBookings);
   }
+
+  getStatus = (tableNo: number) => {
+    const findTable = this.timeBookings.find(
+      (table) => table.tableNo == tableNo
+    );
+    if (!findTable) {
+      return 'available';
+    } else {
+      return findTable.status;
+    }
+  };
 }

@@ -1,11 +1,13 @@
 <button class="outer-container">
   <div class="left-chairs">
-    <app-chair></app-chair>
-    <app-chair></app-chair>
+    <app-chair [availableStatus]="currentStatus"></app-chair>
+    <app-chair [availableStatus]="currentStatus"></app-chair>
   </div>
-  <div class="rectangle">{{ tableNo }}</div>
+  <div appBooking currentStatus="{{ currentStatus }}" class="rectangle">
+    {{ tableNo }}
+  </div>
   <div class="right-chairs">
-    <app-chair class="flipped"></app-chair>
-    <app-chair class="flipped"></app-chair>
+    <app-chair [availableStatus]="currentStatus" class="flipped"></app-chair>
+    <app-chair [availableStatus]="currentStatus" class="flipped"></app-chair>
   </div>
 </button>
