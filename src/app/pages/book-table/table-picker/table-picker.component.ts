@@ -6,6 +6,7 @@ import { TableFor12Component } from './table-for-12/table-for-12.component';
 import { TableFor8Component } from './table-for-8/table-for-8.component';
 import { booking } from '../../../interfaces/booking.interface';
 import { BookingsService } from '../../../services/bookings.service';
+import { CurrentTableService } from '../../../services/current-table.service';
 
 @Component({
   selector: 'app-table-picker',
@@ -26,9 +27,13 @@ export class TablePickerComponent implements OnChanges {
   currentDateTables: booking[] = [];
   timeBookings: booking[] = [];
 
-  constructor(private bookingService: BookingsService) {}
+  constructor(
+    private bookingService: BookingsService,
+    private currentTable: CurrentTableService
+  ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
+    this.currentTable.set(0);
     if (changes['date']) {
       this.bookingService.get(this.date).subscribe((tables) => {
         this.currentDateTables = tables;
