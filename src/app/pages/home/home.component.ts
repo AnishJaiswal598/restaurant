@@ -67,8 +67,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   setCurrentTab = (tab: string) => {
     tab = tab.replace('/', '');
-    console.log(tab);
-
     this.currentTab.set(tab);
   };
 

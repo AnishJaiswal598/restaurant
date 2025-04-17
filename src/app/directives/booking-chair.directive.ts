@@ -20,8 +20,10 @@ export class BookingChairDirective implements OnChanges {
       this.el.nativeElement.style.cursor = 'not-allowed';
     } else if (changes['currentStatus'].currentValue == 'progress') {
       this.el.nativeElement.style.backgroundColor = ' #8c8c02';
+      this.el.nativeElement.style.cursor = 'pointer';
     } else {
       this.el.nativeElement.style.backgroundColor = ' #3498db';
+      this.el.nativeElement.style.cursor = 'pointer';
     }
   }
 }
