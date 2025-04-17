@@ -1,4 +1,10 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { TableFor2Component } from './table-for-2/table-for-2.component';
 import { TableFor4Component } from './table-for-4/table-for-4.component';
 import { TableFor6Component } from './table-for-6/table-for-6.component';
@@ -21,7 +27,7 @@ import { CurrentTableService } from '../../../services/current-table.service';
   templateUrl: './table-picker.component.html',
   styleUrl: './table-picker.component.css',
 })
-export class TablePickerComponent implements OnChanges {
+export class TablePickerComponent implements OnInit, OnChanges {
   @Input() time: number = 0;
   @Input() date: number = 0;
   currentDateTables: booking[] = [];
@@ -32,6 +38,14 @@ export class TablePickerComponent implements OnChanges {
     private currentTable: CurrentTableService
   ) {}
 
+  ngOnInit(): void {
+    this.bookingService.get(this.date).subscribe((tables) => {
+      this.currentDateTables = tables;
+      this.timeBookings = this.currentDateTables.filter(
+        (table) => this.time == table.time
+      );
+    });
+  }
   ngOnChanges(changes: SimpleChanges): void {
     this.currentTable.set(0);
     if (changes['date']) {
