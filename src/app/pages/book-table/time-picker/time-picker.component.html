@@ -1,62 +1,69 @@
-<div class="time-section">
-  <div class="time-head">Time Slots</div>
-  <div class="time-slots">
-    <div class="section">
-      <div class="dayTime-head">Morning</div>
-      <div class="morning">
-        @for (slot of morningSlots; track $index) {
-        <button
-          (click)="selectTimeSlot(slot.hour)"
-          class="time"
-          [disabled]="slot.hour < nextHour && isCurrentDateSelectedDate()"
-          [ngClass]="{
-            'select-slot': this.selectedTimeSlot == slot.hour,
-            'disable-button':
-              slot.hour < nextHour && isCurrentDateSelectedDate()
-          }"
-        >
-          {{ slot.bookingTime }}
-        </button>
-        }
+<div class="outer-container">
+  <div class="time-section">
+    <div class="time-head">Time Slots</div>
+    <div class="time-slots">
+      <div class="section">
+        <div class="dayTime-head">Morning</div>
+        <div class="morning">
+          @for (slot of morningSlots; track $index) {
+          <button
+            (click)="selectTimeSlot(slot.hour)"
+            class="time"
+            [disabled]="slot.hour < nextHour && isCurrentDateSelectedDate()"
+            [ngClass]="{
+              'select-slot': this.selectedTimeSlot == slot.hour,
+              'disable-button':
+                slot.hour < nextHour && isCurrentDateSelectedDate()
+            }"
+          >
+            {{ slot.bookingTime }}
+          </button>
+          }
+        </div>
       </div>
-    </div>
-    <div class="section">
-      <div class="dayTime-head">Afternoon</div>
-      <div class="afternoon">
-        @for (slot of afternoonSlots; track $index) {
-        <button
-          (click)="selectTimeSlot(slot.hour)"
-          class="time"
-          [disabled]="slot.hour < nextHour && isCurrentDateSelectedDate()"
-          [ngClass]="{
-            'select-slot': this.selectedTimeSlot == slot.hour,
-            'disable-button':
-              slot.hour < nextHour && isCurrentDateSelectedDate()
-          }"
-        >
-          {{ slot.bookingTime }}
-        </button>
-        }
+      <div class="section">
+        <div class="dayTime-head">Afternoon</div>
+        <div class="afternoon">
+          @for (slot of afternoonSlots; track $index) {
+          <button
+            (click)="selectTimeSlot(slot.hour)"
+            class="time"
+            [disabled]="slot.hour < nextHour && isCurrentDateSelectedDate()"
+            [ngClass]="{
+              'select-slot': this.selectedTimeSlot == slot.hour,
+              'disable-button':
+                slot.hour < nextHour && isCurrentDateSelectedDate()
+            }"
+          >
+            {{ slot.bookingTime }}
+          </button>
+          }
+        </div>
       </div>
-    </div>
-    <div class="section">
-      <div class="dayTime-head">Evening</div>
-      <div class="evening">
-        @for (slot of eveningSlots; track $index) {
-        <button
-          (click)="selectTimeSlot(slot.hour)"
-          class="time"
-          [disabled]="slot.hour < nextHour && isCurrentDateSelectedDate()"
-          [ngClass]="{
-            'select-slot': this.selectedTimeSlot == slot.hour,
-            'disable-button':
-              slot.hour < nextHour && isCurrentDateSelectedDate()
-          }"
-        >
-          {{ slot.bookingTime }}
-        </button>
-        }
+      <div class="section">
+        <div class="dayTime-head">Evening</div>
+        <div class="evening">
+          @for (slot of eveningSlots; track $index) {
+          <button
+            (click)="selectTimeSlot(slot.hour)"
+            class="time"
+            [disabled]="slot.hour < nextHour && isCurrentDateSelectedDate()"
+            [ngClass]="{
+              'select-slot': this.selectedTimeSlot == slot.hour,
+              'disable-button':
+                slot.hour < nextHour && isCurrentDateSelectedDate()
+            }"
+          >
+            {{ slot.bookingTime }}
+          </button>
+          }
+        </div>
       </div>
     </div>
   </div>
+  @if(this.showBookingButton){
+  <button class="book-table-button" (click)="bookSelectedSlot()">
+    Book table
+  </button>
+  }
 </div>

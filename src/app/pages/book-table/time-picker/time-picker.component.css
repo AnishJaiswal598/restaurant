@@ -1,8 +1,6 @@
 .time-section {
   padding-top: 8px;
   padding-left: 20px;
-  height: 100%;
-  border-left: 2px solid #ccc;
   box-sizing: border-box;
 }
 
@@ -77,4 +75,40 @@
   background-color: #f16a56;
   color: black;
   border: 2px solid #333;
+}
+
+.outer-container {
+  height: 97%;
+  border-left: 2px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.book-table-button {
+  width: 150px;
+  padding: 10px 15px;
+  border: 2px solid #ca3d26;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #ca3d26;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.book-table-button:hover {
+  background-color: #ca3d26;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
+}
+
+.book-table-button:active {
+  transform: translateY(0);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }

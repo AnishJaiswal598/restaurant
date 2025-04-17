@@ -10,6 +10,8 @@ import {
 } from '@angular/core';
 import { time } from '../../../interfaces/time.interface';
 import { CommonModule } from '@angular/common';
+import { CurrentTableService } from '../../../services/current-table.service';
+import { BookingsService } from '../../../services/bookings.service';
 
 @Component({
   selector: 'app-time-picker',
@@ -23,8 +25,23 @@ export class TimePickerComponent implements OnInit, OnChanges {
   @Output() displayedTime = new EventEmitter<number>();
   selectedTimeSlot: number = 0;
   nextHour: number = 0;
+  showBookingButton: boolean = false;
+  currentlySelectedTable: number = 0;
+
+  constructor(
+    private currentTable: CurrentTableService,
+    private bookingTable: BookingsService
+  ) {}
 
   ngOnInit(): void {
+    this.currentTable.get().subscribe((val) => {
+      this.currentlySelectedTable = val;
+      if (val != 0) {
+        this.showBookingButton = true;
+      } else {
+        this.showBookingButton = false;
+      }
+    });
     this.nextHour = new Date().getHours() + 1;
     this.selectedTimeSlot = this.getNearestTimeSlot(this.nextHour);
     this.emitCurrentTime(this.selectedTimeSlot);
@@ -80,4 +97,14 @@ export class TimePickerComponent implements OnInit, OnChanges {
   emitCurrentTime(time: number): void {
     this.displayedTime.emit(time);
   }
+
+  bookSelectedSlot = () => {
+    this.bookingTable.set(
+      this.selectedTimeSlot,
+      'booked',
+      this.currentlySelectedTable,
+      this.date
+    );
+    this.currentTable.set(0);
+  };
 }
