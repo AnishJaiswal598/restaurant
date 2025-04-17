@@ -21,8 +21,10 @@ export class BookingDirective implements OnChanges {
       this.el.nativeElement.style.cursor = 'not-allowed';
     } else if (changes['currentStatus'].currentValue == 'progress') {
       this.el.nativeElement.style.backgroundColor = 'yellow';
+      this.el.nativeElement.style.cursor = 'pointer';
     } else {
       this.el.nativeElement.style.backgroundColor = 'aqua';
+      this.el.nativeElement.style.cursor = 'pointer';
     }
   }
 }

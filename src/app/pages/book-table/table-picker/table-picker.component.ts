@@ -42,10 +42,11 @@ export class TablePickerComponent implements OnInit, OnChanges {
     this.bookingService.get(this.date).subscribe((tables) => {
       this.currentDateTables = tables;
       this.timeBookings = this.currentDateTables.filter(
-        (table) => this.time == table.time
+        (table) => this.time == table.time && this.date == table.date
       );
     });
   }
+
   ngOnChanges(changes: SimpleChanges): void {
     this.currentTable.set(0);
     if (changes['date']) {

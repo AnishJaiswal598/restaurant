@@ -21,16 +21,13 @@ export class BookingsService {
   }
 
   set(time: number, status: string, tableNo: number, date: number) {
-    console.log('request comings');
     const currentBokings = this.bookings.value;
-    const existingBooking = currentBokings.find((b) => b.time == time);
+    const existingBooking = currentBokings.find(
+      (b) => b.time == time && b.date == date && b.tableNo == tableNo
+    );
     if (existingBooking) {
-      console.log('outside');
-
       existingBooking.status = status;
     } else {
-      console.log('pushing');
-
       currentBokings.push({
         time: time,
         status: status,
