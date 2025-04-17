@@ -20,13 +20,16 @@ import { CommonModule } from '@angular/common';
 })
 export class BookTableComponent implements OnInit {
   bookedTables: booking[] = [];
-  date: number =
-    new Date().getTime() < 23 ? new Date().getDate() : new Date().getDate() + 1;
+  date: number = 0;
   time: number = 0;
 
   constructor(private cdr: ChangeDetectorRef) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const time = new Date().getHours();
+    const date = new Date().getDate();
+    this.date = time < 23 ? date : date + 1;
+  }
 
   selectedDate = (currentDate: number): void => {
     this.date = currentDate;
