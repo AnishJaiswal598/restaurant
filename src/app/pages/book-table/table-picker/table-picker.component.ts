@@ -13,6 +13,7 @@ import { TableFor8Component } from './table-for-8/table-for-8.component';
 import { booking } from '../../../interfaces/booking.interface';
 import { BookingsService } from '../../../services/bookings.service';
 import { CurrentTableService } from '../../../services/current-table.service';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-table-picker',
@@ -30,6 +31,7 @@ import { CurrentTableService } from '../../../services/current-table.service';
 export class TablePickerComponent implements OnInit, OnChanges {
   @Input() time: number = 0;
   @Input() date: number = 0;
+  destroyed = new Subject<boolean>();
   currentDateTables: booking[] = [];
   timeBookings: booking[] = [];
 
@@ -39,26 +41,26 @@ export class TablePickerComponent implements OnInit, OnChanges {
   ) {}
 
   ngOnInit(): void {
-    this.bookingService.get(this.date).subscribe((tables) => {
-      this.currentDateTables = tables;
-      this.timeBookings = this.currentDateTables.filter(
-        (table) => this.time == table.time && this.date == table.date
-      );
-    });
+    this.setTimeBookings();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    this.destroyed.next(true);
     this.currentTable.set(0);
-    if (changes['date']) {
-      this.bookingService.get(this.date).subscribe((tables) => {
-        this.currentDateTables = tables;
-      });
-    } else if (changes['time']) {
-      this.timeBookings = this.currentDateTables.filter(
-        (table) => this.time == table.time
-      );
-    }
+    this.setTimeBookings();
   }
+
+  setTimeBookings = () => {
+    this.bookingService
+      .get(this.date)
+      .pipe(takeUntil(this.destroyed))
+      .subscribe((tables) => {
+        this.currentDateTables = tables;
+        this.timeBookings = this.currentDateTables.filter(
+          (table) => this.time == table.time
+        );
+      });
+  };
 
   getStatus = (tableNo: number) => {
     const findTable = this.timeBookings.find(
