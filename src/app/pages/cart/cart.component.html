@@ -3,7 +3,10 @@
   @if(cartItems.length==0){
   <div class="empty-message">
     Hungry for something special? Let's
-    <a [routerLink]="'/menu'" id="redirect-button">fill up</a> your cart!
+    <a [routerLink]="'/menu'" id="redirect-button" (click)="changeTab('menu')"
+      >fill up</a
+    >
+    your cart!
   </div>
   }@else {
   <div class="section">
