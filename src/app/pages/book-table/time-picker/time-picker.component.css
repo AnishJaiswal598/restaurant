@@ -1,0 +1,151 @@
+.time-section {
+  padding-top: 8px;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+.time-head {
+  color: #ca3d26;
+  font-family: "Dancing Script", cursive;
+  font-size: 32px;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-top: 20px;
+  text-transform: capitalize;
+}
+
+.time-slots {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-left: 10px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dayTime-head {
+  font-size: 20px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.morning,
+.afternoon,
+.evening {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.time {
+  width: 120px;
+  padding: 8px 12px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background-color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.time:not(:disabled):hover {
+  background-color: #f2f2f2;
+  color: #ca3d26;
+  border-color: #ca3d26;
+  transform: scale(1.05);
+}
+
+.select-slot {
+  background-color: #f16a56;
+}
+
+.disable-button {
+  border: 1px solid rgb(201, 198, 198);
+  cursor: not-allowed;
+}
+
+.time.select-slot:hover {
+  background-color: #f16a56;
+  color: black;
+  border: 2px solid #333;
+}
+
+.outer-container {
+  height: 97%;
+  border-left: 2px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.book-table-button {
+  width: 150px;
+  padding: 10px 15px;
+  border: 2px solid #ca3d26;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #ca3d26;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.book-table-button:hover {
+  background-color: #ca3d26;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
+}
+
+.book-table-button:active {
+  transform: translateY(0);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.representations {
+  font-size: 12px;
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+
+.box {
+  margin-right: 4px;
+  height: 12px;
+  width: 12px;
+  border: 1px solid black;
+}
+
+.aqua,
+.yellow,
+.red {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aqua .box {
+  background-color: aqua;
+}
+
+.yellow .box {
+  background-color: yellow;
+}
+
+.red .box {
+  background-color: red;
+}

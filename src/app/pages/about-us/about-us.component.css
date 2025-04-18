@@ -1,9 +1,9 @@
 .outer-container {
-  background: url("../../../assets/about_bg.png");
+  background: url("../../../assets/about/about_bg.png");
   height: 83vh;
   background-repeat: no-repeat;
   background-position: bottom;
-  width: 100vw;
+  width: 99vw;
 }
 
 .content {
@@ -15,7 +15,7 @@
 }
 
 .sign {
-  background: url("../../../assets/about_sign.png");
+  background: url("../../../assets/about/about_sign.png");
   height: 100px;
   width: 200px;
   background-repeat: no-repeat;

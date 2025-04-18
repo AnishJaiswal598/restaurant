@@ -1,0 +1,96 @@
+.date-picker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.date-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12px 0;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.date-scroller {
+  display: flex;
+  padding-top: 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 10px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.next-date {
+  width: 60px;
+  margin: 0 8px;
+  cursor: pointer;
+  border: none;
+  background-color: #ffffff;
+  padding: 6px 4px;
+  border-radius: 6px;
+  border: 1px dotted rgb(123, 120, 120);
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.next-date:hover {
+  background-color: #eef2f5;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.next-date .day {
+  font-size: 12px;
+  color: #333;
+}
+
+.next-date .date {
+  padding-top: 2px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.go-right,
+.go-left {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.go-right:hover,
+.go-left:hover {
+  background-color: #f0f0f0;
+}
+
+.go-left {
+  margin-right: 12px;
+}
+
+.disable {
+  pointer-events: none;
+  color: rgb(199, 199, 199);
+}
+
+.highlight-date {
+  background-color: #f16a56;
+  border: 1px solid #333;
+}
+
+.highlight-date:hover {
+  background-color: #f16a56;
+}

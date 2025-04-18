@@ -1,0 +1,72 @@
+.table {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  border: none;
+  cursor: pointer;
+}
+
+.image {
+  height: inherit;
+  width: inherit;
+  color: green;
+}
+
+.outer-container {
+  display: flex;
+  padding: 20px 50px 0 50px;
+  height: 90%;
+  width: 90%;
+}
+
+.container {
+  background-color: green;
+}
+
+.left-tables {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  gap: 30px;
+  align-items: center;
+}
+
+.right-tables {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.top-left {
+  position: absolute;
+  top: 10px;
+  left: 100px;
+}
+
+.top-right {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.center {
+  position: absolute;
+  top: 150px;
+  left: 300px;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 70px;
+}

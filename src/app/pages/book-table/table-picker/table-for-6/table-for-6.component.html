@@ -1,0 +1,23 @@
+<button class="outer-container" (click)="alterBookingStatus()">
+  <div class="chair top-left">
+    <app-chair [availableStatus]="currentStatus"></app-chair>
+  </div>
+  <div class="chair top-right">
+    <app-chair [availableStatus]="currentStatus"></app-chair>
+  </div>
+  <div class="chair left">
+    <app-chair [availableStatus]="currentStatus"></app-chair>
+  </div>
+  <div class="chair right">
+    <app-chair [availableStatus]="currentStatus"></app-chair>
+  </div>
+  <div class="chair bottom-left">
+    <app-chair [availableStatus]="currentStatus"></app-chair>
+  </div>
+  <div class="chair bottom-right">
+    <app-chair [availableStatus]="currentStatus"></app-chair>
+  </div>
+  <div appBooking currentStatus="{{ currentStatus }}" class="circle">
+    {{ tableNo }}
+  </div>
+</button>

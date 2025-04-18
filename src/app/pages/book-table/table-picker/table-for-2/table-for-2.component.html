@@ -1,0 +1,7 @@
+<button class="outer-container" (click)="alterBookingStatus()">
+  <app-chair [availableStatus]="currentStatus"></app-chair>
+  <div appBooking currentStatus="{{ currentStatus }}" class="rectangle">
+    {{ tableNo }}
+  </div>
+  <app-chair [availableStatus]="currentStatus" class="flipped"></app-chair>
+</button>

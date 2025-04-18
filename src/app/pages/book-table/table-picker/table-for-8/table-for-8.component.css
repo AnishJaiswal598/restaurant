@@ -1,0 +1,33 @@
+.outer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  background-color: #f9f9f9;
+}
+
+.top-face {
+  transform: rotate(-90deg);
+}
+
+.bottom-face {
+  transform: rotate(90deg);
+}
+
+.rectangle {
+  font-size: larger;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  width: 200px;
+  background-color: aqua;
+}
+
+.top-chairs,
+.bottom-chairs {
+  display: flex;
+  gap: 25px;
+}

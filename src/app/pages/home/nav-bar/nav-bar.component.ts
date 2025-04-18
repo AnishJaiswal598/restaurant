@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { CurrentTabService } from '../../../services/current-tab.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -17,14 +18,15 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   styleUrl: './nav-bar.component.css',
 })
 export class NavBarComponent implements OnInit {
-  @Output() tabValue = new EventEmitter<string>();
   currentTab: string = '';
+  constructor(private currentTabService: CurrentTabService) {}
   ngOnInit(): void {
-    this.currentTab = 'home';
+    this.currentTabService.get().subscribe((tab) => {
+      this.currentTab = tab;
+    });
   }
 
   changeCurrentTab = (tab: string) => {
-    this.currentTab = tab;
-    this.tabValue.emit(this.currentTab);
+    this.currentTabService.set(tab);
   };
 }

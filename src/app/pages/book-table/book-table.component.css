@@ -1,0 +1,14 @@
+.outer-container {
+  height: 83vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+}
+
+.selection-section {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 70% auto;
+  padding-top: 10px;
+  border-top: 2px solid black;
+}
