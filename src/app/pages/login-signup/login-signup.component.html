@@ -1,0 +1,17 @@
+<div class="outer-container">
+  <div class="left-container">
+    @if (currentCommponent=='login') {
+    <app-login (toggle)="toggleValue($event)"></app-login>
+    }@else{
+    <app-signup (toggle)="toggleValue($event)"></app-signup>
+    }
+  </div>
+  <div class="right-container">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 class="brand">Tasty Bites</h1>
+      <div class="tagline">You pick, we click</div>
+      <div class="sub-tagline">Tasty meals, super quick!</div>
+    </div>
+  </div>
+</div>
