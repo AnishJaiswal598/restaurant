@@ -12,7 +12,18 @@ html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.dialog-background {
+  backdrop-filter: blur(4px);
+  background-color: rgb(226, 238, 243, 0.23);
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  border-radius: 10px;
+  border: 2px solid black;
 }
