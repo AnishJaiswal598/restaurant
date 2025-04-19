@@ -1,24 +1,87 @@
 <div class="outer-container">
   <div class="header">Sign Up</div>
-  <div class="form">
-    <div class="username">
-      <div class="text-name">Username</div>
-      <input type="text" class="input-text" placeholder="UserName" />
+  <form class="form-container" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div class="form">
+      <div class="username">
+        <div class="text-name">Username</div>
+        <input
+          type="text"
+          class="input-text"
+          placeholder="UserName"
+          formControlName="username"
+        />
+        @if (signupForm.get('username')?.dirty ||
+        signupForm.get('username')?.touched) { @if
+        (signupForm.get('username')?.errors?.['required']) {
+        <div class="error-message">* User Name is required</div>
+        } }
+      </div>
+      <div class="email">
+        <div class="text-name">Email</div>
+        <input
+          type="text"
+          class="input-text"
+          placeholder="Email"
+          formControlName="email"
+        />
+        @if (signupForm.get('email')?.dirty || signupForm.get('email')?.touched)
+        { @if (signupForm.get('email')?.errors?.['required']) {
+        <div class="error-message">* Email is required</div>
+        } @else if (signupForm.get('email')?.errors?.['email']) {
+        <div class="error-message">* Please provide a valid email address</div>
+        } }
+      </div>
+      <div class="password">
+        <div class="text-name">Password</div>
+        <input
+          type="text"
+          class="input-text"
+          placeholder="Password"
+          formControlName="password"
+        />
+        @if (signupForm.get('password')?.dirty ||
+        signupForm.get('password')?.touched) { @if
+        (signupForm.get('password')?.errors?.['required']) {
+        <div class="error-message">* Password is required</div>
+        } @else if (signupForm.get('password')?.errors?.['minlength']) {
+        <div class="error-message">
+          * Password should be of minimum 8 characters
+        </div>
+        } @else if (signupForm.get('password')?.errors?.['pattern']) {
+        <span class="error-message">
+          * Password must contain at least one number, lowercase letter,
+          uppercase letter, and special character.
+        </span>
+        }}
+      </div>
+      <div class="confirm-password">
+        <div class="text-name">Confirm Password</div>
+        <input
+          type="text"
+          class="input-text"
+          placeholder="Password"
+          formControlName="confirmPassword"
+        />
+        @if (signupForm.get('confirmPassword')?.dirty ||
+        signupForm.get('confirmPassword')?.touched) { @if
+        (signupForm.get('confirmPassword')?.errors?.['required']) {
+        <div class="error-message">* Confirm Password is required</div>
+        } @else if (signupForm.errors?.['passwordMismatch']) {
+        <span class="error-message">
+          * Password and Confirm Password must match
+        </span>
+        }}
+      </div>
     </div>
-    <div class="email">
-      <div class="text-name">Email</div>
-      <input type="text" class="input-text" placeholder="Email" />
-    </div>
-    <div class="password">
-      <div class="text-name">Password</div>
-      <input type="text" class="input-text" placeholder="Password" />
-    </div>
-    <div class="confirm-password">
-      <div class="text-name">Confirm Password</div>
-      <input type="text" class="input-text" placeholder="Password" />
-    </div>
-  </div>
-  <button class="login">Sign Up</button>
+    <button
+      [disabled]="signupForm.invalid"
+      [ngClass]="signupForm.invalid ? 'disableButton' : ''"
+      class="login"
+      type="submit"
+    >
+      Sign Up
+    </button>
+  </form>
   <div class="text">
     Already a User?
     <a (click)="toggleLogin()" class="login-toggle">Login Now!</a>

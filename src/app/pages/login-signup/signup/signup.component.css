@@ -8,8 +8,8 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  width: 100%;
+  gap: 32px;
+  width: 125%;
   max-width: 300px;
 }
 
@@ -40,7 +40,7 @@
   transition: background-color 0.3s ease;
 }
 
-.login:hover {
+.login:not(:disabled) {
   background-color: #c75a24;
 }
 
@@ -68,4 +68,32 @@
   padding: 40px 20px;
   background-color: #f1f1f1;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.error-message {
+  color: red;
+  font-size: 10px;
+  font-weight: 500;
+  position: absolute;
+  width: 280px;
+  line-height: 1.2;
+  top: 68px;
+}
+
+.email,
+.password,
+.username,
+.confirm-password {
+  position: relative;
+}
+
+.disableButton {
+  background-color: #555;
+  cursor: auto;
 }
