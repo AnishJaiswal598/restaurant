@@ -22,6 +22,9 @@ namespace TastyBitesDotnet.Models
     [Required]
     public string Image {  get; set; }
 
+    [Required]
+    public string FoodType { get; set; }
+
     [NotMapped]
     public List<string> Ingredients => IngredientsList?.Split(',').Select(s => s.Trim()).ToList() ?? new List<string>();
   }
