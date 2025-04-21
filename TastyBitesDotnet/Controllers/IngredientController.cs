@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TastyBitesDotnet.Data;
@@ -7,16 +8,16 @@ namespace TastyBitesDotnet.Controllers
 {
   [Route("api/[controller]")]
   [ApiController]
-  public class DinerController(ApplicationDbContext dbContext) : ControllerBase
+  public class IngredientController(ApplicationDbContext dbContext) : ControllerBase
   {
     private readonly ApplicationDbContext dbContext = dbContext;
+
     [HttpGet]
     public async Task<IActionResult> Get()
     {
-      try
-      {
-        var diners = await dbContext.Diners.ToListAsync();
-        return Ok(diners);
+      try {
+        var ingredients = await dbContext.Ingredients.ToListAsync();
+        return Ok(ingredients);
       }
       catch (Exception ex)
       {
@@ -25,14 +26,13 @@ namespace TastyBitesDotnet.Controllers
     }
 
     [HttpPost]
-    public async Task<IActionResult> Post([FromBody] Diner diner)
+    public async Task<IActionResult> Post([FromBody] Ingredient ingredient)
     {
-      try
-      {
-        diner.Id = Guid.NewGuid();
-        await dbContext.Diners.AddAsync(diner);
+      try {
+        ingredient.Id = Guid.NewGuid();
+        await dbContext.Ingredients.AddAsync(ingredient);
         await dbContext.SaveChangesAsync();
-        return Ok("Diner added successfully");
+        return Ok(ingredient);
       }
       catch (Exception ex)
       {

@@ -8,8 +8,10 @@ namespace TastyBitesDotnet.Data
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) {
        
     }
-    public DbSet<Diner> Diner { get; set; }
+    public DbSet<Diner> Diners { get; set; }
     public DbSet<Users> Users { get; set; }
+    public DbSet<Ingredient> Ingredients { get; set; }
+    public DbSet<DishType> DishTypes { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
