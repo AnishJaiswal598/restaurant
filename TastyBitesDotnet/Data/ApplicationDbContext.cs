@@ -9,6 +9,12 @@ namespace TastyBitesDotnet.Data
        
     }
     public DbSet<Diner> Diner { get; set; }
+    public DbSet<Users> Users { get; set; }
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+      base.OnModelCreating(modelBuilder);
+      modelBuilder.Entity<Users>().HasIndex(u => u.Email).IsUnique();
+    }
   }
 }
