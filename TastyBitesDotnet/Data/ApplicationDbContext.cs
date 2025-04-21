@@ -8,7 +8,7 @@ namespace TastyBitesDotnet.Data
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) {
        
     }
-    public DbSet<MenuItem> MenuItems { get; set; } 
+    public DbSet<Diner> Diner { get; set; }
 
   }
 }
