@@ -7,10 +7,8 @@ namespace TastyBitesDotnet.Models.DatabaseModels
     [Key]
     public Guid Id { get; set; }
 
-    [Required]
     public int DinerNo { get; set; }
 
-    [Required]
     public int TotalSeats { get; set; }
   }
 }
