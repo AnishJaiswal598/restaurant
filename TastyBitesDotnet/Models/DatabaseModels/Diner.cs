@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace TastyBitesDotnet.Models
+namespace TastyBitesDotnet.Models.DatabaseModels
 {
   public class Diner
   {

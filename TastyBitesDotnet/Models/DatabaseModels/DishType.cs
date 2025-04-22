@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace TastyBitesDotnet.Models
+namespace TastyBitesDotnet.Models.DatabaseModels
 {
   public class DishType
   {
@@ -9,8 +9,5 @@ namespace TastyBitesDotnet.Models
 
     [Required]
     public string Type { get; set; } = string.Empty;
-
-    public ICollection<Dish>? Dishes { get; set; }
-
-   }
+  }
 }

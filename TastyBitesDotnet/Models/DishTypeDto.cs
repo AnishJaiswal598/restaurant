@@ -2,14 +2,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TastyBitesDotnet.Models
 {
-  public class Ingredient
+  public class DishTypeDto
   {
     [Key]
     public Guid Id { get; set; }
 
     [Required]
-    public string Name { get; set; } = string.Empty;
-
-    public ICollection<Dish>? Dishes { get; set; }
+    public string Type { get; set; } = string.Empty;
   }
 }

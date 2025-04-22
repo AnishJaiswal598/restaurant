@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace TastyBitesDotnet.Models
+namespace TastyBitesDotnet.Models.DatabaseModels
 {
   public class Dish
   {
@@ -8,17 +8,17 @@ namespace TastyBitesDotnet.Models
     public Guid Id { get; set; }
 
     [Required]
-    public string Name { get; set; }=string.Empty;
+    public string Name { get; set; } = string.Empty;
 
     [Required]
     public int Price { get; set; }
 
     [Required]
-    public string Image {  get; set; }= string.Empty;
+    public string Image { get; set; } = string.Empty;
 
     public ICollection<Ingredient> Ingredients { get; set; }
 
-    public Guid DishTypeId {  get; set; }
+    public Guid DishTypeId { get; set; }
     public DishType DishType { get; set; }
 
   }

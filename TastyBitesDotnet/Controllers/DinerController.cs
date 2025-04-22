@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TastyBitesDotnet.Data;
-using TastyBitesDotnet.Models;
+using TastyBitesDotnet.Models.DatabaseModels;
 
 namespace TastyBitesDotnet.Controllers
 {

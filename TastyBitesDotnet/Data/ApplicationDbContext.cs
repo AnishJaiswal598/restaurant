@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using TastyBitesDotnet.Models;
+using TastyBitesDotnet.Models.DatabaseModels;
 
 namespace TastyBitesDotnet.Data
 {
@@ -21,13 +21,13 @@ namespace TastyBitesDotnet.Data
 
       modelBuilder.Entity<Dish>()
         .HasOne(d => d.DishType)
-        .WithMany(dt => dt.Dishes)
+        .WithMany()
         .HasForeignKey(d => d.DishTypeId);
 
       modelBuilder.Entity<Dish>()
         .HasMany(i => i.Ingredients)
-        .WithMany(d => d.Dishes)
-        .UsingEntity(j => j.ToTable("DishIngredient"));
+        .WithMany()
+        .UsingEntity(j => j.ToTable("DishIngredients"));
     }
   }
 }

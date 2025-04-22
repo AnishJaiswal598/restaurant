@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TastyBitesDotnet.Data;
 using TastyBitesDotnet.Models;
+using TastyBitesDotnet.Models.DatabaseModels;
 
 namespace TastyBitesDotnet.Controllers
 {
@@ -28,13 +29,17 @@ namespace TastyBitesDotnet.Controllers
     }
 
     [HttpPost]
-    public async Task<IActionResult> Post([FromBody] DishType dishType)
+    public async Task<IActionResult> Post([FromBody] DishTypeDto dishType)
     {
       try {
-        dishType.Id = Guid.NewGuid();
-        await dbContext.DishTypes.AddAsync(dishType);
+        var newDishType = new DishType
+        {
+          Id = Guid.NewGuid(),
+          Type = dishType.Type,
+        };
+        await dbContext.DishTypes.AddAsync(newDishType);
         await dbContext.SaveChangesAsync();
-        return Ok("Dish " + dishType.Type + "added Successfully");
+        return Ok("Dish " + dishType.Type + " added Successfully");
       }
       catch (Exception ex)
       {

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TastyBitesDotnet.Data;
+using TastyBitesDotnet.Models.DatabaseModels;
 
 namespace TastyBitesDotnet.Controllers
 {
@@ -31,7 +32,7 @@ namespace TastyBitesDotnet.Controllers
     }
 
     [HttpPost]
-    public async Task<IActionResult> Post([FromBody] Models.Users user)
+    public async Task<IActionResult> Post([FromBody] Users user)
     {
       try {
         user.Id= Guid.NewGuid();

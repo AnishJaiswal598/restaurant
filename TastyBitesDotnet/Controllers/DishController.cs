@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using TastyBitesDotnet.Data;
 using TastyBitesDotnet.Models;
+using TastyBitesDotnet.Models.DatabaseModels;
 
 namespace TastyBitesDotnet.Controllers
 {
@@ -10,6 +12,19 @@ namespace TastyBitesDotnet.Controllers
   public class DishController(ApplicationDbContext dbContext) : ControllerBase
   {
     private readonly ApplicationDbContext dbContext = dbContext;
+
+    [HttpGet]
+    public async Task<IActionResult> Get()
+    {
+      try {
+        var dishes = await dbContext.Dishes.Include(d=>d.Ingredients).Include(d=>d.DishType).ToListAsync();
+        return Ok(dishes);
+      }
+      catch(Exception ex)
+      {
+        return BadRequest(ex.Message);
+      }
+    }
 
     [HttpPost]
     public async Task<IActionResult> Post([FromBody] DishDto dish)
@@ -45,7 +60,7 @@ namespace TastyBitesDotnet.Controllers
         await dbContext.Dishes.AddAsync(newDish);
         await dbContext.SaveChangesAsync();
 
-        return Ok(newDish);
+        return Ok("New Dish "+dish.Name+" added Successfully");
 
       }
       catch (Exception ex){
