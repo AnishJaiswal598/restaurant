@@ -12,11 +12,11 @@ namespace TastyBitesDotnet.Controllers
   {
     private readonly ApplicationDbContext dbContext = dbContext;
 
-    [HttpGet]
-    public async Task<IActionResult> Get([FromQuery] string email)
+    [HttpGet("{Id}")]
+    public async Task<IActionResult> Get([FromRoute] Guid Id)
     {
       try {
-        var user = await dbContext.Users.FirstOrDefaultAsync(u=>u.Email==email);
+        var user = await dbContext.Users.FirstOrDefaultAsync(u=>u.Id==Id);
         if(user == null)
         {
           return NotFound("User Not Found");
@@ -28,6 +28,19 @@ namespace TastyBitesDotnet.Controllers
       }
       catch(Exception ex) {
         return StatusCode(500, "An error occured while fetching user " + ex.Message);
+      }
+    }
+
+    [HttpGet("allUsers")]
+    public async Task<IActionResult> Get()
+    {
+      try {
+        var users = await dbContext.Users.ToListAsync();
+        return Ok(users);
+      }
+      catch(Exception ex)
+      {
+        return BadRequest(ex.Message);
       }
     }
 
