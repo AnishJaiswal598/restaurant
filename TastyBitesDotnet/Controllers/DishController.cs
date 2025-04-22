@@ -40,7 +40,6 @@ namespace TastyBitesDotnet.Controllers
         var newDish = new Dish{
           Id = Guid.NewGuid(),
           DishType = dishType,
-          DishTypeId = dish.DishTypeId,
           Image = dish.Image,
           Ingredients = new List<Ingredient>(),
           Name = dish.Name,
