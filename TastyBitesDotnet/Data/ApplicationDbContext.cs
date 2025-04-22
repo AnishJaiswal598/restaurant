@@ -13,16 +13,12 @@ namespace TastyBitesDotnet.Data
     public DbSet<Ingredient> Ingredients { get; set; }
     public DbSet<DishType> DishTypes { get; set; }
     public DbSet<Dish> Dishes { get; set; }
+    public DbSet<TableBooking> TableBookings { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
       base.OnModelCreating(modelBuilder);
       modelBuilder.Entity<Users>().HasIndex(u => u.Email).IsUnique();
-
-      modelBuilder.Entity<Dish>()
-        .HasOne(d => d.DishType)
-        .WithMany()
-        .HasForeignKey(d => d.DishTypeId);
 
       modelBuilder.Entity<Dish>()
         .HasMany(i => i.Ingredients)
