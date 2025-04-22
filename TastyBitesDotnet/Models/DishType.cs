@@ -10,5 +10,7 @@ namespace TastyBitesDotnet.Models
     [Required]
     public string Type { get; set; } = string.Empty;
 
+    public ICollection<Dish>? Dishes { get; set; }
+
    }
 }
