@@ -18,7 +18,6 @@ namespace TastyBitesDotnet.Models.DatabaseModels
 
     public ICollection<Ingredient> Ingredients { get; set; }
 
-    public Guid DishTypeId { get; set; }
     public DishType DishType { get; set; }
 
   }
