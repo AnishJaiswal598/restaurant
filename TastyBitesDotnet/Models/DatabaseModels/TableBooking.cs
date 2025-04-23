@@ -13,8 +13,10 @@ namespace TastyBitesDotnet.Models.DatabaseModels
     [Column("date")]
     public int Date {  get; set; }
     [Column("tableid")]
+    [ForeignKey("tableid")]
     public Diner Diner { get; set; }
     [Column("userid")]
+    [ForeignKey("userid")]
     public Users User { get; set; }
   }
 }

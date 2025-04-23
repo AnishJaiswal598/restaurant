@@ -17,19 +17,19 @@ namespace TastyBitesDotnet.Controllers
     public async Task<IActionResult> Get([FromQuery] int Date)
     {
       try {
-        var tableBookings = await dbContext.TableBookings.Where(booking => booking.Date == Date).ToListAsync();
+        var tableBookings = await dbContext.TableBookings.Include(t => t.Diner).Include(t => t.User).Where(booking => booking.Date == Date).ToListAsync();
         return Ok(tableBookings);
       }
-      catch(Exception ex) {
-        return BadRequest(ex.Message);  
+      catch (Exception ex) {
+        return BadRequest(ex.Message);
       }
     }
 
-    [HttpGet("/byUser")]
-    public async Task<IActionResult> Get([FromQuery] Guid Id)
+    [HttpGet("{Id}")]
+    public async Task<IActionResult> Get([FromRoute] Guid Id)
     {
       try {
-        var tableBookingsByUser = await dbContext.TableBookings.Where(booking=>booking.UserId == Id).ToListAsync();
+        var tableBookingsByUser = await dbContext.TableBookings.Include(t=>t.User.Id==Id).ToListAsync();
         return Ok(tableBookingsByUser);
       }
       catch (Exception ex) {
@@ -58,14 +58,14 @@ namespace TastyBitesDotnet.Controllers
         var newTableBooking = new TableBooking
         {
           Id = Guid.NewGuid(),
-          TableId = tableBookingDto.TableId,
           Date = tableBookingDto.Date,
           Time = tableBookingDto.Time,
-          UserId = tableBookingDto.UserId,
+          User = user,
+          Diner = table
         };
         await dbContext.TableBookings.AddAsync(newTableBooking);
         await dbContext.SaveChangesAsync();
-        return Ok(newTableBooking);
+        return Ok("New Table added successfuly");
       }
       catch(Exception ex) {
         return BadRequest(ex);
