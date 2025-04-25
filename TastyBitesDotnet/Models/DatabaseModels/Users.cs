@@ -12,5 +12,7 @@ namespace TastyBitesDotnet.Models.DatabaseModels
 
     [Required]
     public string Email { get; set; } = string.Empty;
+
+
   }
 }

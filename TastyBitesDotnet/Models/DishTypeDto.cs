@@ -11,3 +11,4 @@ namespace TastyBitesDotnet.Models
     public string Type { get; set; } = string.Empty;
   }
 }
+

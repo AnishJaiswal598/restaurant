@@ -14,6 +14,8 @@ namespace TastyBitesDotnet.Data
     public DbSet<DishType> DishTypes { get; set; }
     public DbSet<Dish> Dishes { get; set; }
     public DbSet<TableBooking> TableBookings { get; set; }
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<OrderDish> OrderDishes { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -24,6 +26,7 @@ namespace TastyBitesDotnet.Data
         .HasMany(i => i.Ingredients)
         .WithMany()
         .UsingEntity(j => j.ToTable("DishIngredients"));
+
     }
   }
 }
