@@ -9,8 +9,7 @@ namespace TastyBitesDotnet.Models.DatabaseModels
   [PrimaryKey(nameof(Order.OrderId), nameof(Dish.DishId))]
   public class OrderDish
   {
-    public Order Order { get; set; }
-    public Dish ?Dish { get; set; }
+    public Dish Dish { get; set; }
     [Column("dishquantity")]
     public int DishQuantity { get; set; }
   }

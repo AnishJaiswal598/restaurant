@@ -12,7 +12,7 @@ namespace TastyBitesDotnet.Models.DatabaseModels
     [Column("date")]
     public DateTime CreatedDate { get; set; }
     [ForeignKey("userid")]
-    public Users ?User { get; set; }
-    public ICollection<OrderDish>? OrderDishes { get; set; } = new List<OrderDish>();
+    public Users User { get; set; }
+    public ICollection<OrderDish> OrderDishes { get; set; } = new List<OrderDish>();
   }
 }

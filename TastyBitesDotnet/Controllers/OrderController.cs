@@ -12,23 +12,27 @@ namespace TastyBitesDotnet.Controllers
   public class OrderController(ApplicationDbContext dbContext) : ControllerBase
   {
     private readonly ApplicationDbContext dbContext = dbContext;
-    [HttpGet("{UserId}")]
-    public async Task<IActionResult> Get([FromRoute] Guid UserId)
+
+    [HttpGet("{OrderId}")]
+    public async Task<IActionResult> Get([FromRoute] Guid OrderId)
+    {
+      try
+      {
+        var orders = await dbContext.Orders.Include(o => o.User).Include(o => o.OrderDishes).ThenInclude(od => od.Dish).Where(o => o.OrderId == OrderId).ToListAsync();
+        return Ok(orders);
+      }
+      catch (Exception ex)
+      {
+        return BadRequest(ex.Message);
+      }
+    }
+
+    [HttpGet()]
+    public async Task<IActionResult> GetByUser([FromQuery] Guid UserId)
     {
       try {
         var orders = await dbContext.Orders.Include(o=>o.User).Include(o => o.OrderDishes).ThenInclude(od=>od.Dish).Where(o=>o.User.Id == UserId).ToListAsync();
-        var displayOrders = orders.Select(order => new OrderOutputDto
-        {
-          CreatedDate = order.CreatedDate,
-          OrderId = order.OrderId,
-          User = order.User,
-          OrderDishes = order.OrderDishes.Select(orderDish => new OrderDishOutputDto
-          {
-            Dish = orderDish.Dish,
-            DishQuantity = orderDish.DishQuantity
-          }).ToList()
-        });
-        return Ok(displayOrders);
+        return Ok(orders);
       }
       catch(Exception ex)
       {
@@ -63,10 +67,8 @@ namespace TastyBitesDotnet.Controllers
           var orderDish = new OrderDish
           {
             Dish = dish,
-            Order = newOrder,
             DishQuantity = order.Quantity
           };
-          await dbContext.OrderDishes.AddAsync(orderDish);
           newOrder.OrderDishes.Add(orderDish);
         }
 
